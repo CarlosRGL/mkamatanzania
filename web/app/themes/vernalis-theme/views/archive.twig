@@ -1,0 +1,14 @@
+{% extends "base/base.twig" %}
+{% block content %}
+    <div class="max-w-[1280px] mx-auto py-6 text-sm  xl:px-0 bg-bgGray">{{fn('breadcrumbs')}}</div>
+    <div class="max-w-[1280px] mx-auto main-int flex py-14  justify-between">
+        <article class="content w-full post-type-{{post.post_type}}" id="post-{{post.ID}}">
+            <h1 class="text-4xl font-bold leading-tight content__title font-titles text-headings mb-7">{{title}}</h1>
+            {% include "components/archive-form.twig" %}
+            {% include "./components/loader.twig" %}
+            <div class="grid grid-cols-3 gap-8 archive_posts">
+                {% include ['components/fiches/archive-fiche-'~post.post_type~'.twig', 'components/fiches/archive-fiche.twig'] ignore missing %}
+            </div>
+        </article>
+    </article>
+</div>{% endblock %}

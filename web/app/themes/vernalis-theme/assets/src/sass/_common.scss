@@ -1,0 +1,53 @@
+@import "./base/fonts";
+@import "./abstract/_mixins.scss";
+@import "~tippy.js/dist/tippy.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./components/header";
+
+@import "./components/blocks";
+
+.px-site {
+  @apply px-5 tablet:px-8 laptop:px-16 desktop:px-32 mid-desktop:px-24;
+}
+
+.tippy-box {
+  background-color: #f39200;
+  color: white;
+  text-transform: uppercase;
+}
+
+.tippy-box[data-placement^="top"] > .tippy-arrow::before {
+  border-top-color: #f39200;
+}
+.tippy-box[data-placement^="bottom"] > .tippy-arrow::before {
+  border-bottom-color: #f39200;
+}
+.tippy-box[data-placement^="left"] > .tippy-arrow::before {
+  border-left-color: #f39200;
+}
+.tippy-box[data-placement^="right"] > .tippy-arrow::before {
+  border-right-color: #f39200;
+}
+
+.lazy {
+  // placeholder image effect gray
+  background-color: #f3f3f3;
+}
+
+.lazy.loaded {
+  animation: none;
+  background-color: transparent;
+}
+
+#header.active {
+  @apply bg-white text-[#022F1B] shadow-lg;
+  #logo {
+    display: flex !important;
+  }
+  #logo-white {
+    display: none !important;
+  }
+}

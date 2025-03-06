@@ -1,0 +1,34 @@
+{% set content = fn('breadcrumbs') %}
+
+<div class="breadcrumb-trail breadcrumb">
+	<span class="breadcrumb-home">
+		<a href="{{ site.url }}" title="Aller à la page d'accueil">
+			<svg>
+				<use xlink:href="{{site.url}}/app/themes/vernalis-theme/assets/build/icons.svg#house-solid"></use>
+			</svg>
+		</a>
+	</span>
+	{{ content.separator }}
+	{% if fn('is_404') %}
+		<span class="breadcrumb-parent last-parent">
+			<a href="{{ site.url }}">
+				Accueil
+			</a>
+		</span>
+	{% else %}
+		{% for parent in content.parents %}
+			<span class="breadcrumb-parent {{ loop.last ? 'last-parent' }} ">
+				<a href="{{parent.guid }}">
+					{{ parent.post_title }}
+				</a>
+			</span>
+			<span class="{{ loop.last ? 'last-separator' : 'previous-separator' }}">
+				{{ content.separator }}
+			</span>
+		{% endfor %}
+		<span class="breadcrumb-current font-bold {{ content.parents|length == 0 ? 'no-parent' }} ">
+			{{ post.title }}
+		</span>
+	{% endif %}
+</div>
+

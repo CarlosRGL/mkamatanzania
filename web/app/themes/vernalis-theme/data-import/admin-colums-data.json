@@ -1,0 +1,192 @@
+{
+    "actualites": [
+        {
+            "columns": {
+                "5c6fcb4d8edaf": {
+                    "type": "column-featured_image",
+                    "label": "Image \u00e0 la une",
+                    "width": "",
+                    "width_unit": "%",
+                    "image_size": "cpac-custom",
+                    "image_size_w": "60",
+                    "image_size_h": "60",
+                    "edit": "on",
+                    "sort": "on",
+                    "filter": "off",
+                    "filter_label": "",
+                    "name": "5c6fcb4d8edaf"
+                },
+                "title": {
+                    "type": "title",
+                    "label": "Titre",
+                    "width": "",
+                    "width_unit": "%",
+                    "edit": "off",
+                    "sort": "on",
+                    "name": "title"
+                },
+                "5c74ffb2c834f": {
+                    "type": "column-taxonomy",
+                    "label": "Taxonomie",
+                    "width": "",
+                    "width_unit": "%",
+                    "taxonomy": "category",
+                    "edit": "on",
+                    "enable_term_creation": "off",
+                    "sort": "on",
+                    "filter": "on",
+                    "filter_label": "Categorie",
+                    "name": "5c74ffb2c834f"
+                },
+                "date": {
+                    "type": "date",
+                    "label": "Date",
+                    "width": "",
+                    "width_unit": "%",
+                    "edit": "off",
+                    "sort": "on",
+                    "filter": "off",
+                    "filter_label": "",
+                    "filter_format": "",
+                    "name": "date"
+                }
+            }
+        }
+    ],
+    "elus": [
+        {
+            "columns": {
+                "5c9355dd34921": {
+                    "type": "column-featured_image",
+                    "label": "Image \u00e0 la une",
+                    "width": "",
+                    "width_unit": "%",
+                    "image_size": "cpac-custom",
+                    "image_size_w": "60",
+                    "image_size_h": "60",
+                    "edit": "off",
+                    "sort": "on",
+                    "filter": "off",
+                    "filter_label": "",
+                    "name": "5c9355dd34921"
+                },
+                "title": {
+                    "type": "title",
+                    "label": "Titre",
+                    "width": "",
+                    "width_unit": "%",
+                    "edit": "off",
+                    "sort": "on",
+                    "name": "title"
+                },
+                "5c9355dd39d9f": {
+                    "type": "column-acf_field",
+                    "label": "Qualite",
+                    "width": "",
+                    "width_unit": "%",
+                    "field": "field_5922ab981a8aa",
+                    "character_limit": "20",
+                    "edit": "off",
+                    "sort": "on",
+                    "filter": "off",
+                    "filter_label": "",
+                    "name": "5c9355dd39d9f"
+                },
+                "date": {
+                    "type": "date",
+                    "label": "Date",
+                    "width": "",
+                    "width_unit": "%",
+                    "edit": "off",
+                    "sort": "on",
+                    "filter": "off",
+                    "filter_label": "",
+                    "filter_format": "",
+                    "name": "date"
+                }
+            }
+        }
+    ],
+    "agenda": [
+        {
+            "columns": {
+                "5c6fcba58fc19": {
+                    "type": "column-featured_image",
+                    "label": "Image \u00e0 la une",
+                    "width": "",
+                    "width_unit": "%",
+                    "image_size": "cpac-custom",
+                    "image_size_w": "60",
+                    "image_size_h": "60",
+                    "edit": "on",
+                    "sort": "on",
+                    "filter": "off",
+                    "filter_label": "",
+                    "name": "5c6fcba58fc19"
+                },
+                "title": {
+                    "type": "title",
+                    "label": "Titre",
+                    "width": "",
+                    "width_unit": "%",
+                    "edit": "off",
+                    "sort": "on",
+                    "name": "title"
+                },
+                "5c6fcba596ca8": {
+                    "type": "column-acf_field",
+                    "label": "Date de debut",
+                    "width": "",
+                    "width_unit": "%",
+                    "field": "field_5c65804da2c9d",
+                    "date_format": "acf",
+                    "edit": "on",
+                    "sort": "on",
+                    "filter": "on",
+                    "filter_label": "Trier par date de debut",
+                    "filter_format": "future_past",
+                    "name": "5c6fcba596ca8"
+                },
+                "5c6fcba597580": {
+                    "type": "column-acf_field",
+                    "label": "Date de Fin",
+                    "width": "",
+                    "width_unit": "%",
+                    "field": "field_5c65805da2c9e",
+                    "date_format": "acf",
+                    "edit": "on",
+                    "sort": "on",
+                    "filter": "on",
+                    "filter_label": "trier par date de fin",
+                    "filter_format": "future_past",
+                    "name": "5c6fcba597580"
+                },
+                "5c6fcba5977f1": {
+                    "type": "column-acf_field",
+                    "label": "Lieu",
+                    "width": "",
+                    "width_unit": "%",
+                    "field": "field_5c66cc82ee2fe",
+                    "character_limit": "20",
+                    "edit": "on",
+                    "sort": "on",
+                    "filter": "off",
+                    "filter_label": "",
+                    "name": "5c6fcba5977f1"
+                },
+                "date": {
+                    "type": "date",
+                    "label": "Date",
+                    "width": "",
+                    "width_unit": "%",
+                    "edit": "off",
+                    "sort": "on",
+                    "filter": "off",
+                    "filter_label": "",
+                    "filter_format": "",
+                    "name": "date"
+                }
+            }
+        }
+    ]
+}

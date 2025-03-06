@@ -1,0 +1,44 @@
+<div class="flex items-center gap-5 archive__form">
+
+
+	<div class="input__container">
+		<input type="hidden" class="post_type" value="{{type}}">
+
+		<input type="text" name="search" id="archive_input" placeholder="Rechercher...">
+	</div>
+	{% if type == 'offres-d-emploi' %}
+		<select class="select_cat" name="categorie" id="">
+			<option value="-1">Commune</option>
+			{% for commune in communes %}
+				<option value="{{commune}}">{{commune}}</option>
+			{% endfor %}
+		</select>
+	{% else %}
+
+		<select class="select_cat" name="categorie" id="">
+			<option value="-1">Catégorie</option>
+			{% for cat in cats %}
+
+				<option value="{{cat.term_id}}">{{cat.name}}</option>
+			{% endfor %}
+		</select>
+	{% endif %}
+
+	{% if type == 'agenda' %}
+		<span class="ml-10 font-bold text-headings">Période</span>
+
+		<div class="input__container">
+			<input type="text" name="start" id="" class="start" autocomplete="off" placeholder="Du">
+			<svg>
+				<use xlink:href="{{theme.link}}/assets/build/icons.svg#calendar"></use>
+			</svg>
+		</div>
+		<div class="input__container">
+			<input type="text" name="end" id="" class="end" autocomplete="off" placeholder="Au">
+			<svg>
+				<use xlink:href="{{theme.link}}/assets/build/icons.svg#calendar"></use>
+			</svg>
+		</div>
+	{% endif %}
+
+</div>

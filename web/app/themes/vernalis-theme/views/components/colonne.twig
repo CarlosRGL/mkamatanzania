@@ -1,0 +1,5 @@
+{% if affichage.afficher_la_colonne is same as(null) or affichage.afficher_la_colonne is same as(true) or fn('is_search') %}
+	<div
+		class="flex-shrink-0 w-[20%] aside">{# {{createPageSubMenu()}} #}
+	</div>
+{% endif %}

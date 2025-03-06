@@ -1,0 +1,14 @@
+  <div class="modal micromodal-salle" id="modal-salle" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-salle-title">
+        <main class="modal__content" id="modal-salle-content">
+            {% for salle in salles %}
+            <a
+                class="font-bold text-bleu-dark" href="{{salle.link}}">
+                {{salle.title}}
+            </a>
+            {% endfor %}
+        </main>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,54 @@
+{% extends "base/base.twig" %}
+
+{% block content %}
+    {% include "./common/bread.twig" %}
+    <div class="max-w-[1400px] mx-auto main-int flex gap-20 py-14 pb-36 justify-between">
+        <article class="content w-full post-type-{{post.post_type}}" id="post-{{post.ID}}">
+            <h1 class="text-5xl font-bold leading-tight content__title font-headings text-headings mb-7">{{post.title}}</h1>
+            <div class="mb-8 font-bold dates font-headings">
+                {% if post.date_de_debut|date('d M Y') == post.date_de_fin|date('d M Y') %}
+                    <span class="flex flex-col items-center justify-center w-32 h-32 leading-tight rounded-full bg-yellow">
+                        <span class="text-4xl font-seminbold text-headings">
+                            {{post.date_de_debut|date('d')}}
+                        </span>
+                        <span class="text-lg font-seminbold text-headings">
+                            {{post.date_de_debut|date('F')}}
+                        </span>
+                    </span>
+                {% else %}
+                    <div class="flex">
+                        <span class="relative z-10 flex flex-col items-center justify-center w-32 h-32 leading-tight rounded-full bg-yellow">
+                            <span class="text-4xl font-seminbold text-headings">
+                                {{post.date_de_debut|date('d')}}
+                            </span>
+                            <span class="text-lg font-seminbold text-headings">
+                                {{post.date_de_debut|date('F')}}
+                            </span>
+                        </span>
+                        <span class="flex flex-col items-center justify-center w-32 h-32 leading-tight rounded-full bg-[#FFCE00] relative -left-3">
+                            <span class="text-4xl font-seminbold text-headings">
+                                {{post.date_de_fin|date('d')}}
+                            </span>
+                            <span class="text-lg font-seminbold text-headings">
+                                {{post.date_de_fin|date('F')}}
+                            </span>
+                        </span>
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+            <div class="content__chapeau">{{post.post_excerpt}}</div>
+
+            <div class="content__body">
+                {{post.content}}
+            </div>
+
+        </article>
+        <div class="lazy w-[600px] h-[800px] flex-shrink-0 bg-center bg-cover" data-bg="{{post.thumbnail.src}}"></div>
+
+
+    </div>
+{% endblock %}

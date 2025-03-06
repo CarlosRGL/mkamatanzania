@@ -1,0 +1,9 @@
+.js-tabs__title {
+  background-color: #bee7ee;
+  color: #099bae;
+  @include matHover;
+}
+.js-tabs__title-active {
+  background-color: #fceccc !important;
+  color: #d08c02 !important;
+}

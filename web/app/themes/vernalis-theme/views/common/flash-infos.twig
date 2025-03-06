@@ -1,0 +1,16 @@
+<div class="py-4 header__flash-infos bg-yellow ">
+    <div class="container flex items-center mx-auto text-headings max-w-screen-desktop">
+        <span class="flex-shrink-0 font-bold uppercase text-headings mr-9">
+            <i class="far fa-bell"></i>
+            Flash-info
+            <span class="">/</span>
+        </span>
+        <div class="w-full overflow-hidden ticker">
+            {% for flash in flash %}
+                <span>
+                    {{flash.titre_defilant}}
+                </span>
+            {% endfor %}
+        </div>
+    </div>
+</div>

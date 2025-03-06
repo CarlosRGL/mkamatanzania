@@ -1,0 +1,33 @@
+{% extends "base/base-int.twig" %}
+{% block content %}
+    <div class="container flex flex-col items-start justify-between w-full mx-auto mb-24 xl:px-4 xl:flex-row main-int">
+        <article class="w-full lg:mb-8 content " id="">
+            <div class="js-tabs tabs-container" id="tabs">
+                <ul class="flex pb-12 mb-12 border-b js-tabs__header border-bgGray">
+                    {% if only_services == false %}
+                        {% for key,pt in search_posts %}
+                            <li class="">
+                                <a href="#" class="px-4 py-2 mr-5 text-lg rounded js-tabs__title">{{key}}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+
+                </ul>
+                {% if only_services == false %}
+                    {% for pt in search_posts %}
+                        <div class="grid grid-cols-4 gap-8 js-tabs__content">
+                            {% for posts in pt %}
+                                {% for post in posts %}
+                                    {% include "components/search-fiche.twig" %}
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+
+            </div>
+        </article>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{THE_REQUEST} /web/([^\s?]*) [NC]
+    RewriteRule ^ %1 [L,NE,R=302]
+
+    ## decomenter et adapter si un extranet est present
+    # RewriteCond %{REQUEST_FILENAME} -s
+    # RewriteRule ^wp-content/uploads/(.*)$ /web/extranet.php?file=$1 [QSA,L]
+    # RewriteRule ^app/uploads/(.*)$ /web/extranet.php?file=$1 [QSA,L]
+
+    RewriteRule ^((?!public/).*)$ web/$1 [L,NC]
+</IfModule>

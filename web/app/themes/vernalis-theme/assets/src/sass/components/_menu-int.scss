@@ -1,0 +1,67 @@
+.menu-int {
+  &__title {
+    font-family: "Poppins";
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #1d1d1b;
+    font-weight: 700;
+    margin-bottom: 20px;
+
+    @include respond(tab-port) {
+      font-size: 24px;
+    }
+  }
+
+  &__menu {
+    border-left: solid 2px #ffec00;
+    background-color: #fff;
+    padding-left: 20px;
+
+    & > li {
+      font-weight: 700;
+      font-size: 16px;
+      &:not(:last-child) {
+        border-bottom: 1px solid #dbdbdb;
+      }
+
+      &:hover > a {
+        color: #008ad1;
+      }
+
+      a {
+        padding: 10px 0;
+        display: block;
+      }
+    }
+
+    .current_page_item,
+    .current_page_ancestor {
+      .children {
+        display: block;
+      }
+      & > a {
+        color: #008ad1;
+      }
+    }
+
+    .children {
+      display: none;
+      padding-bottom: 10px;
+
+      a {
+        font-weight: 400;
+        font-size: 14px;
+        color: #70767b;
+        padding: 5px 20px;
+
+        &:hover {
+          color: #ffec00;
+        }
+      }
+      .current_page_item a {
+        color: #1d1d1b;
+        font-weight: 700;
+      }
+    }
+  }
+}

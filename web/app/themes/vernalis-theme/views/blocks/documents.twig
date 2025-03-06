@@ -1,0 +1,48 @@
+{#
+  Title: Documents Joints
+  Description: Document Joints
+  Category: media
+  Icon: file
+  Keywords: "Document Joints"
+  Mode: edit
+  Align: full
+  PostTypes: page post actualites
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+
+<div class="my-20 documents-joints print:hidden">
+
+	<h2 class="mb-12 text-xl font-bold content__h2">{{fields.titre_liste_documents}}</h2>
+	<h3 class="flex py-4 text-lg font-bold text-headings documents-joints__item group font-headings">
+		Documents
+		<br>
+		téléchargeables
+	</h3>
+	<ul class="grid grid-cols-1 rounded-md documents-joints__list tablet:grid-cols-2 laptop:grid-cols-1">
+		{% for document in fields.documents %}
+			<li class="flex gap-4 hover:opacity-60 cursor-pointer items-center py-3 {{loop.last == false ? 'border-b ' : ''}}  documents-joints__item border-bgGray group">
+				<a href="{{get_info_doc(document.document)['url']}}">
+
+					<span class="flex items-center justify-center w-10 h-10 text-white rounded-full bg-blue" target="_blank" href="{{get_info_doc(document.document)['url']}}">
+						<svg class="w-5 h-5">
+							<use xlink:href="{{site.url}}/app/themes/1619/assets/build/icons.svg#arrow-down"></use>
+						</svg>
+					</span>
+
+
+					<a class="text-sm font-bold break-words laptop:text-base documents-joints__item-title text-headings" target=" _blank" href=" {{get_info_doc(document.document)['url']}} ">
+						{{get_info_doc(document.document)['name']}}
+						<span class=" block ml-auto laptop:inline-flex font-normal text-xs text-text uppercase text-textGray documents-joints__filesize--{{get_info_doc(document.document)['extension']}}">
+							{{get_info_doc(document.document)['extension']}}
+							-
+							{{get_info_doc(document.document)['size']}}
+						</span>
+					</a>
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

@@ -1,0 +1,50 @@
+{% for post in posts %}
+    <div class="w-full transition-all bg-white shadow-lg hover:shadow-2xl">
+        <div class="lazy w-full h-[350px] flex-shrink-0 bg-center bg-cover relative mb-10" data-bg="{{post.thumbnail.src}}">
+            <div class="absolute -bottom-[50px] dates left-5 font-headings font-bold">
+                {% if post.date_de_debut|date('d M Y') == post.date_de_fin|date('d M Y') %}
+                    <span class="flex flex-col items-center justify-center w-24 h-24 leading-tight rounded-full bg-yellow">
+                        <span class="text-4xl font-seminbold text-headings">
+                            {{post.date_de_debut|date('d')}}
+                        </span>
+                        <span class="text-lg font-seminbold text-headings">
+                            {{post.date_de_debut|date('M')}}
+                        </span>
+                    </span>
+                {% else %}
+                    <div class="flex">
+                        <span class="relative z-10 flex flex-col items-center justify-center w-24 h-24 leading-tight rounded-full bg-yellow">
+                            <span class="text-4xl font-seminbold text-headings">
+                                {{post.date_de_debut|date('d')}}
+                            </span>
+                            <span class="text-lg font-seminbold text-headings">
+                                {{post.date_de_debut|date('M')}}
+                            </span>
+                        </span>
+                        <span class="flex flex-col items-center justify-center w-24 h-24 leading-tight rounded-full bg-[#FFCE00] relative -left-3">
+                            <span class="text-4xl font-seminbold text-headings">
+                                {{post.date_de_fin|date('d')}}
+                            </span>
+                            <span class="text-lg font-seminbold text-headings">
+                                {{post.date_de_fin|date('M')}}
+                            </span>
+                        </span>
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+        </div>
+        <div class="p-8">
+            <h2 class="mb-5 text-2xl font-bold font-headings text-headings">{{post.title}}</h2>
+            <div class="mb-5">
+                {% for term in post.terms %}
+                    <span class="px-3 py-1 text-sm font-bold uppercase border rounded-full border-blue text-blue">{{term.name}}</span>
+                {% endfor %}
+            </div>
+            <p class="mb-5 font-light leading-relaxed text-text">{{post.post_excerpt|truncate(15)}}</p>
+            <a class="inline-flex px-5 py-2 text-sm font-bold uppercase transition-all rounded-full text-headings bg-yellow hover:text-white hover:bg-headings" href="{{post.link}}">LIRE LA SUITE</a>
+        </div>
+    </div>
+{% endfor %}

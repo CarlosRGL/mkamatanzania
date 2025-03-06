@@ -1,0 +1,100 @@
+.gform_wrapper,
+.acfe-form {
+  background-color: #f4f4f4;
+  padding: 30px;
+  color: #6e6e6e;
+  .gfield,
+  .acf-field {
+    margin-bottom: 25px !important;
+    border-top: none !important;
+  }
+  .acf-field {
+    padding-bottom: 0 !important;
+  }
+  #seizedixneuf-rdv-calendar {
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  .fc-event {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  #seizedixneuf-rdv-selected.selected {
+    background-color: #bee1f3;
+    color: #007c93;
+    padding: 20px;
+    margin: 25px 0;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  select,
+  textarea {
+    border: none;
+    border-radius: 8px;
+    padding: 10px !important ;
+    box-shadow: 3px 3px 10px #00000014;
+  }
+  .gfield_label,
+  .acf-label > label {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #3e3d3c;
+    font-family: Poppins;
+  }
+
+  .leaflet-control-geocoder {
+    margin-bottom: 30px;
+  }
+
+  .leaflet-control-geocoder-form input {
+    height: 38px !important;
+  }
+
+  .screen-reader-text {
+    display: none;
+  }
+
+  .acf-url i {
+    top: 10px !important;
+  }
+
+  .gsection_title {
+    font-size: 23px !important;
+    font-weight: 400 !important;
+    color: #3e3d3c;
+  }
+  input[type="submit"] {
+    border: 1px solid #008ad1;
+    color: white;
+    text-transform: uppercase;
+    background-color: #008ad1;
+    padding: 10px !important ;
+  }
+  .gfield_required {
+    color: #008ad1 !important;
+  }
+
+  .gfield.gsection h2.gsection_title {
+    margin-top: 50px !important;
+    font-family: Poppins !important;
+    font-weight: 700 !important;
+    font-size: 32px !important;
+  }
+}
+
+.gform_legacy_markup_wrapper.gf_browser_chrome
+  .gfield_checkbox
+  li
+  input[type="checkbox"],
+.gform_legacy_markup_wrapper.gf_browser_chrome
+  .gfield_radio
+  li
+  input[type="radio"],
+.gform_legacy_markup_wrapper.gf_browser_chrome .gfield_checkbox li input {
+  margin-top: 0 !important;
+}

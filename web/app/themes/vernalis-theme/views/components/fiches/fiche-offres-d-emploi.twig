@@ -1,0 +1,23 @@
+{% for post in posts %}
+	{% set infosContrat = post.meta('field_5bfc0ff18e26c') %}
+	{% set lieu = post.meta('field_5bfc0893870f8') %}
+	<div class="bg-white shadow-xl">
+		<div class="p-6">
+			<h2 class="mb-5 text-xl font-bold font-headings text-headings">{{post.title}}</h2>
+			<span class="flex items-center mb-5 text-text">
+
+				<svg class="w-4 h-4 mr-2 text-blue">
+					<use xlink:href="{{site.url}}/app/themes/1619/assets/build/icons.svg#calendar"></use>
+				</svg>
+
+				{{infosContrat.typeContratLibelle}}
+
+			</span>
+
+			<p class="mb-5 font-light leading-relaxed text-text">{{post.post_content|truncate(15)}}</p>
+			<a class="inline-flex px-5 py-2 text-sm font-bold uppercase transition-all rounded-full text-headings bg-yellow hover:text-white hover:bg-headings" href="https://candidat.pole-emploi.fr/offres/recherche/detail/{{post.meta('id')}}" target="_blank">Postuler via Pôle emploi</a>
+
+
+		</div>
+	</div>
+{% endfor %}

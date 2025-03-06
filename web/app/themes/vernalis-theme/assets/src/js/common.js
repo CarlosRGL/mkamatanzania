@@ -1,0 +1,91 @@
+import tippy from "tippy.js";
+// scrollreveal
+import ScrollReveal from "scrollreveal";
+
+export default function init() {
+  tippy("[data-tippy]", {
+    placement: "bottom",
+    onShow(instance) {
+      instance.popper.hidden = instance.reference.dataset.tippy ? false : true;
+      instance.setContent(instance.reference.dataset.tippy);
+    },
+  });
+
+  // when scroll from top add class .active to #header
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      document.getElementById("header").classList.add("active");
+    } else {
+      document.getElementById("header").classList.remove("active");
+    }
+  });
+
+  // smooth scroll to all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const element = document.querySelector(this.getAttribute("href"));
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - 150, // 100px offset
+        behavior: "smooth",
+      });
+    });
+  });
+
+  // Initialize ScrollReveal
+  const sr = ScrollReveal({
+    origin: "bottom",
+    distance: "60px",
+    duration: 1000,
+    delay: 200,
+    easing: "cubic-bezier(0.5, 0, 0, 1)",
+    reset: false,
+  });
+
+  // Apply to sections
+  sr.reveal(".reveal-section", {
+    interval: 200,
+  });
+
+  // Apply to section headers
+  sr.reveal(".reveal-header", {
+    origin: "top",
+    distance: "40px",
+    delay: 100,
+  });
+
+  // Apply to images
+  sr.reveal(".reveal-image", {
+    origin: "left",
+    distance: "80px",
+    delay: 300,
+  });
+
+  // Apply to content blocks
+  sr.reveal(".reveal-content", {
+    origin: "right",
+    distance: "80px",
+    delay: 300,
+  });
+
+  // Apply to cards with staggered delay
+  sr.reveal(".reveal-card", {
+    interval: 150,
+  });
+
+  // Apply to contact form
+  sr.reveal(".reveal-form", {
+    origin: "bottom",
+    distance: "50px",
+    delay: 200,
+  });
+
+  // Apply to contact info
+  sr.reveal(".reveal-contact-info", {
+    origin: "right",
+    distance: "50px",
+    delay: 300,
+  });
+}

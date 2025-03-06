@@ -1,0 +1,19 @@
+{
+    "/build/js/home.js": "/build/js/home.js",
+    "/build/js/main.js": "/build/js/main.js",
+    "/build/js/common.js": "/build/js/common.js",
+    "/build/js/search.js": "/build/js/search.js",
+    "/build/js/archive.js": "/build/js/archive.js",
+    "/build/js/single.js": "/build/js/single.js",
+    "/build/js/product.js": "/build/js/product.js",
+    "/build/js/calendar.js": "/build/js/calendar.js",
+    "/build/js/manifest.js": "/build/js/manifest.js",
+    "/build/css/home.css": "/build/css/home.css",
+    "/build/css/main.css": "/build/css/main.css",
+    "/build/css/product.css": "/build/css/product.css",
+    "/build/js/vendor.js": "/build/js/vendor.js",
+    "/build/fonts/inter-v13-latin-300.woff2": "/build/fonts/inter-v13-latin-300.woff2",
+    "/build/fonts/inter-v13-latin-600.woff2": "/build/fonts/inter-v13-latin-600.woff2",
+    "/build/fonts/inter-v13-latin-700.woff2": "/build/fonts/inter-v13-latin-700.woff2",
+    "/build/fonts/inter-v13-latin-regular.woff2": "/build/fonts/inter-v13-latin-regular.woff2"
+}

@@ -1,0 +1,10 @@
+{% extends 'base/base-int.twig' %}
+
+{% block int_content %}
+  <article class="content post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+    <h1 class="text-4xl font-bold text-center text-[#99772E]">Pagina no encontrada</h1>
+    <p class="text-center">La página que buscas no ha sido encontrada. El enlace que has utilizado puede estar roto o la dirección (URL) que has escrito puede ser incorrecta.</p>
+    <br />
+    <a href="/" class="text-center font-bold text-[#99772E] underline">Volver a la página de inicio</a>
+  </article>
+{% endblock %}

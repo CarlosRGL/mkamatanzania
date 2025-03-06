@@ -1,0 +1,38 @@
+{% for post in posts %}
+
+	<div class="" onclick="location.href='{{post.link}}'">
+		<div class="w-full h-full transition-all shadow cursor-pointer group actualites__item hover:shadow-xl">
+			<div class="overflow-hidden image__wrapper">
+				<img data-src="{{post.thumbnail.src ? post.thumbnail.src|resize(450,275) : img_folder~'/default-img.jpg'}}" alt="" class="transition-all duration-500 lazy group-hover:scale-125 group-hover:transform">
+			</div>
+			<div class="px-8 py-10 actualites__content">
+				<h2 class="mb-4 text-lg font-medium leading-7 4xl:text-xl actualites__title text-primaryBlue">{{post.title}}</h2>
+				{% if post.post_type == 'agenda' %}
+					<div class="flex items-center text-sm slider__dates text-headings mb-7">
+						<div class="start">
+							<span>{{post.date_de_debut|date('d')}}</span>
+							<span>{{post.date_de_debut|date('M')}}</span>
+							<span>{{post.date_de_debut|date('Y')}}</span>
+						</div>
+						{% if post.date_de_debut != post.date_de_fin %}
+							<svg class="w-4 h-4 mx-4 separator text-blue">
+								<use xlink:href="{{theme.link}}/assets/build/icons.svg#chevron-right-regular"></use>
+							</svg>
+							<div class="end">
+								<span>{{post.date_de_fin|date('d')}}</span>
+								<span>{{post.date_de_fin|date('M')}}</span>
+								<span>{{post.date_de_fin|date('Y')}}</span>
+							</div>
+						{% endif %}
+					</div>
+
+				{% endif %}
+				<pre>
+                    {{ dump(post) }}
+                </pre>
+				<div class="font-normal 4xl:text-md actualites__excerpt text-textGray">{{post.post_excerpt|truncate(10)}}</div>
+
+			</div>
+		</div>
+	</div>
+{% endfor %}

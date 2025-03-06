@@ -1,0 +1,94 @@
+<div class="modal micromodal-reservation" id="modal-reservation" aria-hidden="true">
+    <div class="z-30 modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-reservation-title">
+		<header>
+			<h2 id="modal-1-title">
+			  Sélectionnez les places
+			</h2>
+			<button aria-label="Close modal" data-micromodal-close>X</button>
+		  </header>
+        <main class="modal__content" id="modal-reservation-content">
+            <table id="table_reserver_prix_qte" cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<th class="reserver_categorie">Catégorie</th>
+						<th class="reserver_prix">Prix par personne</th>
+						<th>Nombre de places</th>
+					</tr>
+					<tr class="2_pour_le_prix_dune">
+						<td>2 pour le prix d'1</td>
+						<td><span class="montant"></span>€ (pour 2 personnes)</td>
+						<td>
+							<a href="#" class="btn_nb_places nb_places_min">-</a>
+							<input type="number" size="2" readonly="readonly" min="0" max="0" step="2" value="0">
+							<a href="#" class="btn_nb_places nb_places_plus">+</a>
+						</td>
+					</tr>
+					<tr class="avant_premiere">
+						<td>Avant-première</td>
+						<td><span class="montant"></span> €</td>
+						<td>
+							<a href="#" class="btn_nb_places nb_places_min">-</a>
+							<input type="number" size="2" readonly="readonly" min="0" max="0" step="1" value="0">
+							<a href="#" class="btn_nb_places nb_places_plus">+</a>
+						</td>
+					</tr>
+					<tr class="reduction_si_2_personnes">
+						<td>Réduction si 2 personnes (- <span class="pourcentage"></span>%)</td>
+						<td><span class="montant"></span> € (pour 2 personnes)</td>
+						<td>
+							<a href="#" class="btn_nb_places nb_places_min">-</a>
+							<input type="number" size="2" readonly="readonly" min="0" max="0" step="2" value="0">
+							<a href="#" class="btn_nb_places nb_places_plus">+</a>
+						</td>
+					</tr>
+					<tr class="reduction_si_4_personnes">
+						<td>Réduction si 4 personnes (- <span class="pourcentage"></span>%)</td>
+						<td><span class="montant"></span> € (pour 4 personnes)</td>
+						<td>
+							<a href="#" class="btn_nb_places nb_places_min">-</a>
+							<input type="number" size="2" readonly="readonly" min="0" max="0" step="4" value="0">
+							<a href="#" class="btn_nb_places nb_places_plus">+</a>
+						</td>
+					</tr>
+					<tr class="reduction_1">
+						<td>Réduction 1 (- <span class="pourcentage"></span>%)</td>
+						<td><span class="montant"></span> €</td>
+						<td>
+							<a href="#" class="btn_nb_places nb_places_min">-</a>
+							<input type="number" size="2" readonly="readonly" min="0" max="0" step="1" value="0">
+							<a href="#" class="btn_nb_places nb_places_plus">+</a>
+						</td>
+					</tr>
+					<tr class="reduction_2">
+						<td>Réduction 2 (- <span class="pourcentage"></span>%)</td>
+						<td><span class="montant"></span> €</td>
+						<td>
+							<a href="#" class="btn_nb_places nb_places_min">-</a>
+							<input type="number" size="2" readonly="readonly" min="0" max="0" step="1" value="0">
+							<a href="#" class="btn_nb_places nb_places_plus">+</a>
+						</td>
+					</tr>
+					<tr class="plein_tarif">
+						<td>Plein tarif</td>
+						<td><span class="montant"></span> €</td>
+						<td>
+							<a href="#" class="btn_nb_places nb_places_min">-</a>
+							<input type="number" size="2" readonly="readonly" min="0" step="1" value="0">
+							<a href="#" class="btn_nb_places nb_places_plus">+</a>
+						</td>
+					</tr>
+					<tr class="total">
+						<td>&nbsp;</td>
+						<td>TOTAL</td>
+						<td>
+							<span class="montant"></span> €
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="button" class="add_cart_modal" name="add_cart_modal" value="Ajouter au panier" />
+        </main>
+      </div>
+    </div>
+  </div>

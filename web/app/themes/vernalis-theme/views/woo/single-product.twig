@@ -1,0 +1,200 @@
+{% do action('woocommerce_before_single_product') %}
+
+<div
+	id="product-{{ post.id }}" {{fn('wc_product_class', '', post.id)}}>
+	{# {% do action('woocommerce_before_single_product_summary') %} #}
+	<div class="row-span-2 product_content">
+		<div
+			class="summary entry-summary">{# {% do action('woocommerce_single_product_summary') %} #}
+		</div>
+
+		<section id="intro" class="relative mb-8 text-xl font-medium leading-8 lg:mb-14">
+
+			<div class="right-0 flex-row justify-between hidden xl:absolute -top-10 xl:flex w-28 social_share">
+
+				<a href="https://www.facebook.com/sharer/sharer.php?u={{post.link}}" onclick="window.open(this.href, 'facebookwindow','left=20,top=20,width=600,height=700,toolbar=0,resizable=1'); return false;" title="Partager sur Facebook">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+
+				<a href="http://twitter.com/intent/tweet?text={{post.title}}&url={{ post.link }}" onclick="window.open(this.href, 'twitterwindow','left=20,top=20,width=600,height=300,toolbar=0,resizable=1'); return false;" title="Partager sur Twitter">
+					<i class="fab fa-twitter"></i>
+				</a>
+
+				<a href="mailto:?subject={{post.title}}&body={{ post.link }}" title="Partager par mail">
+					<i class="fal fa-envelope"></i>
+				</a>
+
+			</div>
+
+
+			<div class="flex w-full">
+					<h2 class="relative inline-block w-full pr-16 text-xl font-bold lg:text-h2">
+					{{post.meta('sous_titre')}}
+					{% if post.meta('nouveau_sejour') %}
+						<div class="absolute top-0 right-0 z-10 mt-0 mb-3 rounded-full shadow-lg">
+							<img class="rounded-full w-[50px] h-[50px] lg:w-[70px] lg:h-[70px]" src="{{theme.link}}/dist/img/new.png" alt="Nouveaux séjour">
+						</div>
+					{% endif %}
+				</h2>
+			</div>
+
+			<div class="flex flex-wrap items-center justify-start py-3">
+				<div class="flex items-center mr-4 mr-auto">
+					<img class="float-left w-10 h-10 pb-3 mr-3" src="{{Image(destination.icone).src}}" alt="logo pays">
+					<a class="py-1 mb-3 text-lg uppercase lg:mt-0 text-bleu-light" {# href="{{destination.link}}" #}>Séjour
+						{% if destination.slug == "etats-unis" %}
+							aux
+						{% elseif destination.slug == "japon" %}
+							au
+						{% elseif destination.slug == "malte" %}
+							à
+						{% else %}
+							en
+						{% endif %}
+						<span>{{destination.name}}</span>
+					</a>
+				</div>
+				{# on affiche uniquement le term de taxo principal #}
+				{% for term in post.terms('product_tag') %}
+						<a {# href="{{term.link}}" #} class="px-3 py-1 mt-2 mb-3 mr-3 text-sm text-center uppercase border rounded-full lg:mt-0 lg:text-lg border-bleu-gris hover:text-bleu-dark">{{ term.name }}</a>
+				{% endfor %}
+				<a class="px-3 py-1 mt-2 mb-3 mr-3 text-sm text-center uppercase border rounded-full lg:mt-0 lg:text-lg border-bleu-gris hover:text-bleu-dark">{{ age }}</a>
+				{% set formulePrincipal = fn('yoast_get_primary_term_id','formule',post) %}
+				{% for term in post.terms('formule') %}
+					{% if term.id == formulePrincipal %}
+						<a {# href="{{term.link}}" #} class="px-3 py-1 mt-2 mb-3 mr-3 text-sm text-center uppercase border rounded-full lg:mt-0 lg:text-lg border-bleu-gris hover:text-bleu-dark">{{ term.name }}</a>
+					{% endif %}
+				{% endfor %}
+				{% set catPrincipal = fn('yoast_get_primary_term_id','product_cat',post) %}
+				{% for term in post.terms('product_cat') %}
+					{% if term.id == catPrincipal %}
+						<a {# href="{{term.link}}" #} class="px-3 py-1 mt-2 mb-3 mr-3 text-sm text-center uppercase border rounded-full lg:mt-0 lg:text-lg border-bleu-gris hover:text-bleu-dark">{{ term.name }}</a>
+					{% endif %}
+				{% endfor %}
+				{% if complet %}
+					<span class="px-3 py-1 mt-2 mb-3 mr-3 text-sm text-center uppercase border rounded-full lg:mt-0 lg:text-lg text-rouge bg-blanc border-rouge leading-sm">
+						<span class="inline-block w-3 h-3 mr-1 rounded-full bg-rouge"></span>
+						Complet</span>
+				{% endif %}
+				{% if annule %}
+					<span class="px-3 py-1 mt-2 mb-3 mr-3 text-sm text-center uppercase border rounded-full lg:mt-0 lg:text-lg text-violet bg-blanc border-violet leading-sm">
+						<span class="inline-block w-3 h-3 mr-1 rounded-full bg-violet"></span>
+						Annulé</span>
+				{% endif %}
+			</div>
+
+			<div class="text-base font-normal lg:text-lg">
+			{{post.get_preview(50, true, '', '', '')}}
+			</div>
+		</section>
+
+		<section id="presentation" class="my-8 lg:my-14">
+			<h3 class="text-xl font-bold uppercase lg:text-h3">Présentation</h3>
+			{{post.meta('presentation')|wpautop}}
+		</section>
+
+		<section id="programme" class="my-8 lg:my-14">
+			<h3 class="text-xl font-bold uppercase lg:text-h3">Programme</h3>
+			{{post.meta('programme')|wpautop}}
+		</section>
+
+		<section id="hebergement_section" class="my-8 lg:my-14">
+			<h3 class="text-xl font-bold uppercase lg:text-h3">Hébergement</h3>
+			{{post.meta('hebergement')|wpautop}}
+		</section>
+
+		<section id="infos_voyage" class="my-8 lg:my-14">
+			<h3 class="text-xl font-bold uppercase lg:text-h3">Infos - Voyage</h3>
+			{{post.meta('infos_voyage')|wpautop}}
+		</section>
+
+		{% if product.get_gallery_image_ids |length >= 1 %}
+			<section id="galerie" class="my-8 lg:my-14">
+
+				<h3 class="text-xl font-bold uppercase lg:text-h3">Galerie</h3>
+				<!-- Swiper -->
+				<div class="swiper">
+					<div class="swiper-wrapper">
+						{% set slideNumber = 0 %}
+						{% for image in product.get_gallery_image_ids %}
+							<div class="swiper-slide">
+								<img src="{{ Image(image).src|resize(1000, 600)}}" class="w-full"/>
+							</div>
+							{% set slideNumber = loop.index %}
+						{% endfor %}
+					</div>
+					<!-- Add Arrows -->
+
+					{% if slideNumber != 1 %}
+						<div class="flex">
+							<div class="swiper-button-prev"></div>
+							<!-- Add Pagination -->
+							<div class="swiper-pagination"></div>
+							<div class="flex swiper-button-next"></div>
+						</div>
+					{% endif %}
+				</div>
+			</section>
+		{% endif %}
+
+		{# <section>
+			{% do action('woocommerce_after_single_product_summary') %}
+		</section> #}
+
+		<section class="produits_suggeres">
+			{{ fn('woocommerce_upsell_display') }}
+		</section>
+	</div>
+
+
+	<section
+		id="prix" class="row-span-1 bg-gris-2">
+
+		{# {{ fn('wc_display_product_attributes', product) }} #}
+
+		{% do action('woocommerce_single_product_summary') %}
+
+		{% if post.meta('produit_a_la_carte') %}
+			{% set prix_affiche = post.meta('duree_session_calendrier')[0].prix_duree %}
+		{% else %}
+			{% set prix_affiche = post.meta('duree_session')[0].sessions[0].prix_session %}
+		{% endif %}
+
+		<div class="actionsBtns grid {% if prix_affiche %}grid-cols-2{% endif %}">
+			{% if prix_affiche %}
+			<div class="grid py-2 prix text-blanc bg-bleu-dark">
+				<span class="inline-flex items-center justify-center text-base">{# Prix calculé #}A partir de</span>
+				{# {{product.get_price_html}} #}
+				<span
+					class="inline-flex items-center justify-center text-2xl font-bold" id="prix_sejour" data-prix-sejour="{% if post.meta('produit_a_la_carte') %}{{post.meta('duree_session_calendrier')[0].prix_duree}}{% else %}{{post.meta('duree_session')[0].sessions[0].prix_session}}{% endif %}">
+					{# {{product.get_price}} #}
+					{{prix_affiche}}
+					€</span>
+			</div>
+			{% endif %}
+			<input id="assurance_annulation" type="hidden" class="hidden" value="{{options.montant_assurance_annulation}}">
+			<input id="frais_dinscription" type="hidden" class="hidden" value="{{options.montant_frais_dinscription}}">
+			<div class="flex reservation {% if not prix_affiche %}py-2{% endif %}">
+				{% if post.meta('produit_reservable') %}
+					{% if complet %}
+						<button class="flex-grow inline-block px-4 py-2 font-semibold uppercase border rounded-none text-blanc border-bleu-light bg-bleu-light disabled:opacity-50 hover:text-bleu-light hover:bg-blanc disabled:cursor-not-allowed" {# disabled #} onclick="location.href='{{site.url}}/nous-contacter';">Contactez nous</button>
+					{% else %}
+						<button id="button-reservation" class="flex-grow inline-block px-4 py-2 font-semibold uppercase border rounded-none text-blanc border-bleu-light bg-bleu-light modal-resa-open disabled:opacity-50 hover:text-bleu-light hover:bg-blanc disabled:cursor-not-allowed" {# disabled #}>Réservation</button>
+						<button id="anchor" data-href="prix" class="flex-grow inline-block px-4 py-2 font-semibold uppercase border rounded-none text-blanc border-bleu-light bg-bleu-light disabled:opacity-50 hover:text-bleu-light hover:bg-blanc disabled:cursor-not-allowed" {# disabled #}>Réservation</button>
+					{% endif %}
+				{% else %}
+					<button class="flex-grow inline-block px-4 py-2 font-semibold uppercase border rounded-none text-blanc border-bleu-light bg-bleu-light disabled:opacity-50 hover:text-bleu-light hover:bg-blanc disabled:cursor-not-allowed" {# disabled #} onclick="location.href='{{site.url}}/nous-contacter';">Contactez nous</button>
+				{% endif %}
+
+
+			</div>
+		</div>
+	</section>
+	<div class="z-40 transform product_sidebar bg-blanc">
+
+
+		{% include "partials/sidebar-single-produit.twig" %}
+
+	</div>
+</div>
+{% do action('woocommerce_after_single_product') %}{% do action('woocommerce_after_single_product') %}

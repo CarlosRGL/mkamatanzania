@@ -1,0 +1,55 @@
+.jsCalendar {
+  background-color: #4b8480;
+  color: #fff;
+  position: absolute;
+  right: 100px;
+
+  table {
+    tbody {
+      padding: 0 40px;
+    }
+    .jsCalendar-title {
+    }
+    .jsCalendar-title-name {
+      width: 100%;
+    }
+    .jsCalendar-week-days {
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      background-color: #599c97;
+      th {
+        padding: 20px 0;
+      }
+    }
+    .jsCalendar-title-name {
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      padding: 20px 0;
+    }
+    .jsCalendar-selected {
+      width: 45px;
+      height: 45px;
+    }
+    .jsCalendar-selected div {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #fa9c08;
+      margin: 0 auto;
+    }
+    tbody td {
+      text-align: center;
+      width: 65px;
+      height: 45px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<div data-pushbar-id="pushbar" class="pushbar from_right">
+    <i class="fas fa-times pushbar__icon--close" data-pushbar-close></i>
+    <nav class="responsive-menu" role="navigation">
+      {% if menu %}
+        <ul class="responsive-menu__list">
+          {% for item in menu.items %}
+            <li class="{{ item.classes | join(' ') }} responsive-menu__item">
+              <a class="responsive-menu__link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+              {% if item.children %}
+                  <ul class="responsive-menu__sousmenu">
+                      {% for child in item.children %}
+                          <li class="responsive-menu__sousitem">
+                              <a href="{{ child.link }}">{{ child.title }}</a>
+                          </li>
+                      {% endfor %}
+                  </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </nav>
+</div>
+
+
+<div class="pushbar_main_content pushbar__icon">
+    <i class="fas fa-bars pushbar__icon--open" data-pushbar-target="pushbar"></i>
+</div>

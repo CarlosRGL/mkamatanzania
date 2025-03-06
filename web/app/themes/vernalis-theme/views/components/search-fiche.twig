@@ -1,0 +1,12 @@
+<div class="" onclick="location.href='{{post.link}}'">
+    <div class="w-full h-full transition-all shadow cursor-pointer group actualites__item hover:shadow-xl">
+        <div class="overflow-hidden image__wrapper">
+            <img data-src="{{post.thumbnail.src ? post.thumbnail.src|resize(450,275) : img_folder~'/default-img.jpg'}}" alt="" class="transition-all duration-500 lazy group-hover:scale-125 group-hover:transform">
+
+        </div>
+        <div class="px-8 py-10 actualites__content">
+            <h2 class="mb-4 text-lg font-medium leading-7 4xl:text-xl actualites__title text-primaryBlue">{{post.title}}</h2>
+            <div class="font-normal 4xl:text-md actualites__excerpt text-textGray">{{post.post_excerpt|truncate(10)}}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<article class="group relative flex flex-col overflow-hidden rounded-md shadow-md produit">
+	<main class="flex flex-col justify-start flex-grow p-3 md:p-6">
+		<h3 class="mb-0 text-base xl:text-lg">
+			<a
+				class="font-bold text-bleu-dark" href="{{post.link}}">
+				{{post.title}}
+			</a>
+		</h3>
+	</main>
+	<footer class="relative lg:absolute inset-0 z-20 flex flex-col items-center justify-center lg:opacity-0 lg:p-10 transform lg:bg-bleu-dark lg:text-blanc lg:group-hover:opacity-90 transition-all duration-300 text-center">
+		<div class="hidden lg:block my-auto text-lg">
+			{{post.post_excerpt }}
+		</div>
+		<div class="{# mt-auto #} w-full lg:w-auto">
+			<a class="btn btn-bleu-light w-full lg:w-auto !rounded-none lg:!rounded" href="{{post.link}}">
+				Découvrir
+			</a>
+		</div>
+	</footer>
+</article>

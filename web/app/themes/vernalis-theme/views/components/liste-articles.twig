@@ -1,0 +1,35 @@
+{% set type = post.meta('liste_des_articles_dans_cette_page').type_darticle.name %}
+{% set annuaires = ['associations', 'professionnels'] %}
+
+
+{% if post.meta('liste_des_articles_dans_cette_page') %}
+    {% include "components/archive-form.twig" %}
+{% endif %}
+{% include "./components/loader.twig" %}
+{% if type in annuaires %}
+    {% set type = 'annuaire' %}
+{% endif %}
+
+{% if type == 'offres-d-emploi' %}
+    <div class="grid grid-cols-1 gap-14 laptop:grid-cols-2 archive_posts">
+        {% include ['components/fiches/fiche-'~type~'.twig', 'components/fiches/fiche.twig'] ignore missing %}
+    </div>
+{% elseif type == 'annuaire' %}
+    <div class="grid grid-cols-1 gap-14 laptop:grid-cols-2 archive_posts">
+        {% include ['components/fiches/fiche-'~type~'.twig', 'components/fiches/fiche.twig'] ignore missing %}
+    </div>
+
+{% else %}
+    <div class="grid grid-cols-1 gap-14 laptop:grid-cols-3 archive_posts">
+        {% include ['components/fiches/fiche-'~type~'.twig', 'components/fiches/fiche.twig'] ignore missing %}
+    </div>
+{% endif %}
+
+{% if posts|length >= 10 and show_button == true %}
+    <section class="flex flex-col items-center justify-center cta">
+        {% include "./components/loader-2.twig" %}
+        <button class="flex items-center justify-center px-4 py-4 mt-8 text-xl font-bold text-center text-white transition-all load-posts rounded-xl bg-blue font-headings hover:bg-headings">
+            {{button_label}}
+        </button>
+    </section>
+{% endif %}

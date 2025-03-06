@@ -1,0 +1,11 @@
+.single-product {
+    div .related {
+        display: none !important;
+    }
+    div.quantity {
+        display: none !important;
+    }
+    button.single_add_to_cart_button {
+        display: none !important;
+    }
+}

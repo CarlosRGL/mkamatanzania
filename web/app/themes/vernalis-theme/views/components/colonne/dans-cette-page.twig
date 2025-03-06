@@ -1,0 +1,6 @@
+{% if affichage.afficher_dans_cette_page is same as(null) or affichage.afficher_dans_cette_page is same as(true) or fn('is_search') %}
+    <div class="p-8 rounded-md cette_page bg-bgGray">
+        <h2 class="text-3xl font-bold text-headings font-headings mb-7">Dans cette Page</h2>
+        <div class="cette-page__h2 "></div>
+    </div>
+{% endif %}

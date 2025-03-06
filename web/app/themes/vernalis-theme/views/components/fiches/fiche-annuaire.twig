@@ -1,0 +1,59 @@
+{% for post in posts %}
+    <div class="shadow-xl bg-bgGray">
+        <div class="lazy w-full h-[200px] flex-shrink-0 bg-center bg-cover" data-bg="{{post.thumbnail.src ? post.thumbnail.src : img_folder~"/img-default.jpg"}}"></div>
+
+
+        <div class="p-8">
+            <h2 class="mb-5 text-2xl font-bold font-headings text-headings">{{post.title}}</h2>
+            <div class="gap-4 mb-5">
+                {% for term in post.terms %}
+                    <span class="px-3 py-1 text-sm font-bold uppercase border rounded-full border-blue text-blue">{{term.name}}</span>
+                {% endfor %}
+            </div>
+            <p class="mb-5 font-light leading-relaxed text-text">{{post.meta('description')|truncate(20)}}</p>
+
+            {% if post.n_de_rue or post.nom_de_la_rue  %}
+                <div class="block mb-3 font-normal text-headings">
+                    <span>{{post.n_de_rue}}
+                        {{post.nom_de_la_rue}}</span>
+                    <br>
+                    <span>{{post.code_postal}}
+                        {{post.ville}}</span>
+                </div>
+            {% endif %}
+            {% if post.site_web  %}
+                <div class="block mb-3 font-normal text-headings">
+                    <span>
+                        <a class="underline text-blue" href="{{post.site_web}}" target="_blank">{{post.site_web}}</a>
+                    </span>
+                </div>
+            {% endif %}
+
+            {% if post.mobile  %}
+                <div class="block mb-3 font-normal text-headings">
+                    <span>
+                        <a class=" text-blue phone" href="tel:{{post.mobile}}" target="_blank">{{post.mobile}}</a>
+                    </span>
+
+                </div>
+            {% endif %}
+
+            {% if post.contact_repeater  %}
+                <div class="mb-3">
+                    <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+                        Contact:
+                    </span>
+                    {% for item in post.meta('contact_repeater') %}
+                        -
+                        {{ item.contact}}
+                        <br>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+
+            <a class="inline-flex px-5 py-2 text-sm font-bold transition-all rounded-full font-headings text-headings bg-yellow hover:text-white hover:bg-headings" href="{{post.link}}">Plus d’infos +</a>
+
+        </div>
+    </div>
+{% endfor %}

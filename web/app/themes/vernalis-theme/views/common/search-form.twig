@@ -1,0 +1,8 @@
+    <form role="search" method="post" id="searchform_site" class="container relative hidden w-full mx-auto" action="{{site.link}}">
+        <div class="relative w-full ml-auto border-0 border-none lg:w-1/3 searchform__input-wrapper">
+            <input id="search-input" class="w-full px-8 py-3 italic focus:ring-blue placeholder-text-text text-text searchform__input bg-bgGray" placeholder="Rechercher..." type="text" value="{{ function('get_search_query') }}" name="s" id="s" data-swplive="true"/>
+            <button class="absolute text-xl transform -translate-y-1/2 text-text-textGray right-4 top-1/2">
+                <i class="fal fa-search"></i>
+            </button>
+        </div>
+    </form>

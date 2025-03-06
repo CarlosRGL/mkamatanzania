@@ -1,0 +1,154 @@
+<div class="flex flex-col w-full px-5 mb-12 text-lg xl:px-0 xl:flex-row text-text">
+    {% if post.thumbnail.src %}
+        <img data-src="{{post.thumbnail.src}}" class="lazy self-start w-[150px] block mx-auto xl:mx-0 " alt="">
+        <div class="mx-7 w-[1px] hidden xl:block bg-borderGray"></div>
+    {% endif %}
+
+
+    <div class="my-10 agenda__infos text-textGray xl:my-0">
+        {% if post.description %}
+
+            <div class="mb-3">
+                <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+                    Description:
+                </span>
+                <span>
+                    <p>{{post.description}}</p>
+                </span>
+
+            </div>
+        {% endif %}
+
+
+        {% if post.contact_repeater  %}
+            <div class="mb-3">
+                <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+                    Contact:
+                </span>
+                {% for item in post.meta('contact_repeater') %}
+                    -
+                    {{ item.contact}}
+                    <br>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+
+        {% if post.telephone_repeater  %}
+            <div class="mb-3">
+                <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+                    Téléphone:
+                </span>
+                {% for item in post.meta('telephone_repeater') %}
+                    <span>
+                        <a class="underline text-primaryBlue phone " href="tel:{{item.telephone}}" target="_blank">{{item.telephone}}</a>
+                    </span>
+                    <br>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if post.mobile  %}
+            <div class="block mb-3 ">
+                <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+
+                    Mobile:
+                </span>
+                <span>
+                    <a class="underline text-primaryBlue phone" href="tel:{{post.mobile}}" target="_blank">{{post.mobile}}</a>
+                </span>
+
+            </div>
+        {% endif %}
+
+        {% if post.mail  %}
+            <div class="block mb-3 ">
+                <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+
+                    Mail:
+                </span>
+                <span>
+                    <a class="underline text-primaryBlue" href="mailto:{{post.mail}}" target="_blank">{{post.mail}}</a>
+                </span>
+            </div>
+        {% endif %}
+
+        {% if post.site_web  %}
+            <div class="block mb-3 ">
+                <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+
+
+                    Site Internet:
+                </span>
+                <span>
+                    <a class="underline text-primaryBlue" href="{{post.site_web}}" target="_blank">{{post.site_web}}</a>
+                </span>
+
+            </div>
+        {% endif %}
+
+        {% if post.facebook  %}
+            <div class="mb-3">
+                <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+                    Page Facebook:
+                </span>
+                -
+                <a class="underline text-primaryBlue" href="{{post.facebook}}" target="_blank">{{post.facebook}}</a>
+
+                <br>
+            </div>
+        {% endif %}
+
+
+        {% if post.horaires  %}
+            <div class="block mb-3 ">
+                <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+
+                    Horaires:
+                </span>
+                <span>{{post.meta('horaires')}}</span>
+
+            </div>
+        {% endif %}
+        {% if post.n_de_rue or post.nom_de_la_rue  %}
+            <div class="block mb-3 ">
+                <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+
+                    Adresse:
+                </span>
+                <span>{{post.n_de_rue}}
+                    {{post.nom_de_la_rue}}</span>
+                <br>
+                <span>{{post.code_postal}}
+                    {{post.ville}}</span>
+            </div>
+        {% endif %}
+
+        <div class="mt-8 social">
+            {% if post.twitter  %}
+                <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+
+                    Page Twitter:
+                </span>
+                <a href="{{post.twitter}}" target="_blank">
+                    {{post.twitter}}
+                </a>
+            {% endif %}
+
+            {% if post.instagram  %}
+                <span class="block mt-5 mb-2 text-xl font-bold text-headings font-headings">
+
+                    Page Instagram:
+                </span>
+                <a href="{{post.instagram}}" target="_blank">
+                    {{post.instagram}}
+                </a>
+            {% endif %}
+        </div>
+
+
+    </div>
+
+
+
+</div>

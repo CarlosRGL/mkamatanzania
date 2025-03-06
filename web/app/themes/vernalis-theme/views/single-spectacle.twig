@@ -1,0 +1,121 @@
+<div id="product-{{ post.id }}" class="single_spectacle">
+	<div class="row-span-2 product_content">
+		<div class="summary entry-summary"></div>
+
+		<section id="intro" class="relative text-xl font-medium leading-8">
+
+			<h2 class="inline-block font-bold text-xl lg:text-h2 pr-16 relative w-full">
+				{{post.title}}
+			</h2>
+
+
+			<div class="text-base lg:text-lg font-normal">
+				{{post.get_preview(50, true, '', '', '')}}
+			</div>
+		</section>
+
+		<section id="presentation" class="mb-8 lg:mb-14">
+			<h3 class="font-bold uppercase text-xl lg:text-h3">Présentation</h3>
+			{{post.meta('presentation')|wpautop}}
+		</section>
+
+		<section id="programme" class="my-8 lg:my-14">
+			<h3 class="font-bold uppercase text-xl lg:text-h3">Programme</h3>
+			{{post.meta('programme')|wpautop}}
+		</section>
+
+		<section id="hebergement_section" class="my-8 lg:my-14">
+			<h3 class="font-bold uppercase text-xl lg:text-h3">Hébergement</h3>
+			{{post.meta('hebergement')|wpautop}}
+		</section>
+
+		<section id="infos_voyage" class="my-8 lg:my-14">
+			<h3 class="font-bold uppercase text-xl lg:text-h3">Infos - Voyage</h3>
+			{{post.meta('infos_voyage')|wpautop}}
+		</section>
+
+		{% if post.meta('galerie') |length >= 1 %}
+			<section id="galerie" class="my-8 lg:my-14">
+
+				<h3 class="font-bold uppercase text-xl lg:text-h3">Galerie</h3>
+				<!-- Swiper -->
+				<div class="swiper">
+					<div class="swiper-wrapper">
+						{% set slideNumber = 0 %}
+						{% for image in post.meta('galerie') %}
+							<div class="swiper-slide">
+								<img src="{{ Image(image).src|resize(1000, 600)}}" class="w-full"/>
+							</div>
+							{% set slideNumber = loop.index %}
+						{% endfor %}
+					</div>
+					<!-- Add Arrows -->
+
+					{% if slideNumber != 1 %}
+						<div class="flex">
+							<div class="swiper-button-prev"></div>
+							<!-- Add Pagination -->
+							<div class="swiper-pagination"></div>
+							<div class="flex swiper-button-next"></div>
+						</div>
+					{% endif %}
+				</div>
+			</section>
+		{% endif %}
+
+		{% if suggeres %}
+			<section class="produits_suggeres mb-8">
+				<section class="up-sells upsells products">
+					<h3 class="font-bold uppercase text-h3">Vous aimerez peut-être aussi…</h3>
+					<div class="grid grid-cols-1 gap-4 xl:grid-cols-2 ">
+						{% for item in suggeres %}
+							{% include "woo/content-product-small.twig" with {post:item} %}
+						{% endfor %}
+					</div>
+				</section>
+			</section>
+		{% endif %}
+	</div>
+
+
+	<section id="prix" class=" row-span-1 bg-gris-2">
+
+		<div class="relative grid items-center grid-cols-3 gap-3 px-3 m-3 justify-items-center">
+
+			<label for="academie" class="col-span-1">Académie :</label>
+
+			<select name="academie" id="academie" class="w-full col-span-2 pr-8 rounded">
+				{% for academie in post.meta('academies') %}
+					<option value="{{academie.academie}}" data-prix="{{academie.prix}}">{{academie.academie}}</option>
+				{% endfor %}
+			</select>
+			<button id="button-devis" class="absolute button-devis-vs-mobile inline-block px-4 py-2 font-semibold uppercase border rounded-none text-blanc border-bleu-dark bg-bleu-dark disabled:opacity-50 hover:text-bleu-light hover:bg-blanc disabled:cursor-not-allowed modal-devis-vs" {# disabled #}>Demander un devis</button>
+
+
+		</div>
+
+		<div class="actionsBtns grid grid-cols-2">
+			<div class="grid py-2 prix text-blanc bg-bleu-dark">
+				<span class="inline-flex items-center justify-center text-base">A partir de</span>
+
+				<span class="inline-flex items-center justify-center text-2xl font-bold" id="prix_sejour" data-prix-sejour="{{post.meta('academies')[0].prix}}">
+					{{post.meta('academies')[0].prix}}
+					€</span>
+			</div>
+
+			<div class="flex reservation">
+				<button class="button-devis-vs flex-grow inline-block px-4 py-2 font-semibold uppercase border rounded-none text-blanc border-bleu-light bg-bleu-light disabled:opacity-50 hover:text-bleu-light hover:bg-blanc disabled:cursor-not-allowed modal-devis-vs">Demander un devis</button>
+				<button id="anchor" data-href="academie" class="button-devis-vs-mobile flex-grow inline-block px-4 py-2 font-semibold uppercase border rounded-none text-blanc border-bleu-light bg-bleu-light disabled:opacity-50 hover:text-bleu-light hover:bg-blanc disabled:cursor-not-allowed">Demander un devis</button>
+			</div>
+		</div>
+	</section>
+	
+	{% include "partials/modal-devis.twig" %}
+	
+	<div class="z-40 {# transform -translate-y-9 #} product_sidebar bg-blanc lg:-mt-16">
+
+
+		{% include "partials/sidebar-single-produit.twig" %}
+
+	</div>
+</div>

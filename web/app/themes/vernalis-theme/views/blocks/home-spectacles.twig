@@ -1,0 +1,15 @@
+{#
+Title: Home Spectacles
+Description: Spectacles Section
+Category: 1619-blocks
+Icon: admin-comments
+#}
+
+
+<section class="p-10 md:py-20 home-spectcles bg-gris-2">
+
+    {% for spectacle in spectacles %}
+        {% include 'woo/content-product-small.twig' with { post: spectacle } %}
+    {% endfor %}
+    
+</section>

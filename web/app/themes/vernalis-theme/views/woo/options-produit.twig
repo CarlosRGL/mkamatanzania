@@ -1,0 +1,39 @@
+
+<div class="grid items-center grid-cols-6 gap-3 px-3 m-3 test-calendrier justify-items-center">
+	<label for="sessions" class="col-span-2">Séances :</label>
+	<select name="seances" id="seances" class="w-full col-span-3 pr-8 rounded" style="border-radius:0.25rem;">
+		<option value="">Sélectionnez une séance</option>
+		{% for seance in seances %}
+			<option 
+				data-prix_plein_tarif="{{seance.prix_plein_tarif}}"
+				data-tarif_avant_premiere="{{seance.tarif_avant_premiere}}"
+				data-reduction_si_2_personnes="{{seance.reduction_si_2_personnes}}"
+				data-reduction_si_4_personnes="{{seance.reduction_si_4_personnes}}"
+				data-reduction_1="{{seance.reduction_1}}"
+				data-reduction_2="{{seance.reduction_2}}"
+				data-nombre_de_places_plein_tarif="{{seance.nombre_de_places_plein_tarif}}"
+				data-nombre_de_places_en_tarif_avant_premiere="{{seance.nombre_de_places_en_tarif_avant_premiere}}"
+				data-nombre_de_places_2_pour_le_prix_dune="{{seance.nombre_de_places_2_pour_le_prix_dune}}"
+				data-nombre_de_places_en_reduction_si_2_personnes="{{seance.nombre_de_places_en_reduction_si_2_personnes}}"
+				data-nombre_de_places_en_reduction_si_4_personnes="{{seance.nombre_de_places_en_reduction_si_4_personnes}}"
+				data-nombre_de_places_en_reduction_1="{{seance.nombre_de_places_en_reduction_1}}"
+				data-nombre_de_places_en_reduction_2="{{seance.nombre_de_places_en_reduction_2}}"
+				value="{{ seance.date_et_heure}}">{{seance.date_et_heure}}</option>
+		{% endfor %}
+	</select>
+</div>
+<input type="hidden" name="prix_plein_tarif" value="" />
+<input type="hidden" name="nombre_de_places_plein_tarif" value="" />
+<input type="hidden" name="nombre_de_places_2_pour_le_prix_dune" value="" />
+<input type="hidden" name="tarif_avant_premiere" value="" />
+<input type="hidden" name="nombre_de_places_en_tarif_avant_premiere" value="" />
+<input type="hidden" name="reduction_si_2_personnes" value="" />
+<input type="hidden" name="nombre_de_places_en_reduction_si_2_personnes" value="" />
+<input type="hidden" name="reduction_si_4_personnes" value="" />
+<input type="hidden" name="nombre_de_places_en_reduction_si_4_personnes" value="" />
+<input type="hidden" name="reduction_1" value="" />
+<input type="hidden" name="nombre_de_places_en_reduction_1" value="" />
+<input type="hidden" name="reduction_2" value="" />
+<input type="hidden" name="nombre_de_places_en_reduction_2" value="" />
+<input type="hidden" name="total" value="" />
+<button id="button-reservation" class="modal-resa-open disabled:opacity-50 disabled:cursor-not-allowed">Réservation</button>

@@ -1,0 +1,44 @@
+{#
+  Title: Trombinoscope
+  Description: Trombinoscope des elus, equipe etc...
+  Category: formatting
+  Icon: admin-comments
+  Keywords: elus trombinoscope equipe
+  Mode: edit
+  Align: full
+  PostTypes: page post actualites
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+
+{% set trombinoscope = fields.trombinoscope %}
+<div class="my-20 trombinoscope">
+
+    {% if fields.titre %}
+        <h2 class="my-6 text-xl font-bold uppercase content__h2 ">{{fields.titre}}</h2>
+    {% endif %}
+
+    {% for groupe in trombinoscope %}
+        <h3>{{groupe.titre_groupe}}</h3>
+        <div class="grid grid-cols-2 gap-8 mb-4 trombinoscope wrap">
+            {% for membre in groupe.groupe %}
+                {% set membre = Post(membre.membre) %}
+                <div class="flex flex-shrink-0 w-full transition-all cursor-pointer trombinoscope__item" onclick="location.href='{{membre.link}}'">
+                    <div class="w-[45%] min-h-[250px] transition-all duration-500 bg-center bg-cover trombinoscope__image lazy group-hover:scale-125 group-hover:transform" data-bg="{{membre.thumbnail.src ? membre.thumbnail.src : img_folder~'/placeholder-person.png'}}"></div>
+
+                    <div class=" p-7 trombinoscope__content bg-bgGray">
+
+                        <div class="text-xl font-bold text-center font-headings trombinoscope__title ">{{membre.title}}</div>
+                        <div class="pb-4 mb-6 border-b trombinoscope__qualite text-blue border-b-bgGray">{{membre.qualite}}</div>
+
+                        <div class="trombinoscope__rep text-textGray">{{membre.representations_externes}}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% endfor %}
+
+</div>

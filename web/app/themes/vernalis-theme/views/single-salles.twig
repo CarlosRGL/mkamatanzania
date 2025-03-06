@@ -1,0 +1,35 @@
+{% extends 'base/base-int.twig' %}
+{% block int_content %}
+  <div class="max-w-[1440px] mx-auto relative mb-32">
+    <a href="{{ post.link }}" class="absolute -top-36 overflow-hidden block js-select-salle transition-all hover:opacity-85 lazy h-[380px] w-[380px] bg-center bg-cover bg-no-repeat" data-bg="{{ img_folder }}/bg-salle.png"><span class="absolute flex items-center justify-center w-full py-5 bg-opacity-50 border-y boder-white bottom-24" style="background: {{ post.meta('couleur') }}"><img src="{{ post.meta('logo').url }}" alt="{{ post.meta('logo').name }}" /></span></a>
+    <div>
+      <p class="pl-[500px] ml-auto font-medium">{{ post.meta('description') }}</p>
+    </div>
+  </div>
+
+  {# programmation #}
+  <div class="bg-[#2B504D] py-12">
+    <div class="max-w-[1440px] mx-auto flex justify-between items-center">
+      <div>
+        <h2 class="text-2xl font-bold text-center text-white uppercase mb-7">découvrez toute la <span class="text-[#4B8480] font-black text-6xl block">programmation</span></h2>
+        <div class="flex items-center justify-center gap-7">
+          <a class="flex items-center justify-center w-[181px] text-sm font-semibold leading-none text-center hover:bg-[#4B8480] hover:text-white transition-all uppercase bg-white border-2 h-14 text-[#4B8480] border-[#4B8480]" href="{{ site.url }}/spectacles">Spectacles</a>
+          <a class="flex items-center justify-center w-[181px] hover:bg-white hover:text-[#4B8480] transition-all text-sm font-semibold leading-none text-center border-[#4B8480] uppercase bg-[#4B8480] border-2 h-14 text-white" href="{{ site.url }}/spectacles">
+            Spectacles <br />
+            jeune public
+          </a>
+        </div>
+      </div>
+      <div id="calendar" data-id="{{ salle }}"></div>
+    </div>
+  </div>
+
+  {# bon plans #}
+  <div class="flex items-center justify-between">
+    <div>
+      Connaissez-vous le billet cadeau ?
+      <a class="flex items-center justify-center w-[181px] hover:bg-white hover:text-[#4B8480] transition-all font-semibold leading-none text-center border-[#4B8480] uppercase bg-[#4B8480] border-2 h-14 text-white" href="{{ site.url }}/spectacles">DÉCOUVRIR</a>
+    </div>
+    <div></div>
+  </div>
+{% endblock %}

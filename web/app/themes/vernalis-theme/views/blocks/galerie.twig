@@ -1,0 +1,28 @@
+{#
+  Title: Galerie
+  Description: TGalerie des Images
+  Category: media
+  Icon: admin-comments
+  Keywords: images galerie
+  Mode: edit
+  Align: full
+  PostTypes: page post actualites
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+{% set galerie = fields %}
+<div class="galerie galerie--{{galerie|length}} my-20">
+    {% if galerie.titre %}
+        <h2>{{galerie.titre}}</h2>
+    {% endif %}
+    <div class="grid grid-flow-row grid-cols-3 gap-5">
+        {% for image in galerie.images %}
+            <div class="relative cursor-pointer hover:opacity-70">
+                <img class="object-cover w-full h-full bg-cover lazy galerie__item" data-fancybox='galerie' data-caption='{{image.caption}}' data-src="{{image.url|resize(500,500)}}">
+            </div>
+        {% endfor %}
+    </div>
+
+</div>

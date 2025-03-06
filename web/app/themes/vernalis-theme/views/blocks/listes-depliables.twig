@@ -1,0 +1,76 @@
+{#
+  Title: Listes depliables
+  Description: Accordeons
+  Category: media
+  Icon: admin-comments
+  Keywords: accordeon liste depliable
+  Mode: edit
+  Align: full
+  PostTypes: page post actualites
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+{% set listes = fields.liste %}
+<div class="my-20 liste-depliable">
+	{% if fields.titre_liste_depliable %}
+		<h2 class="my-6 text-xl font-bold content__h2 ">{{fields.titre_liste_depliable}}</h2>
+	{% endif %}
+	<div class="flex flex-col gap-2 listes group">
+		{% for liste in listes %}
+			<div class=" liste-depliable__item">
+				<h3 class="flex items-center justify-between w-full p-4 font-semibold cursor-pointer bg-bgGray liste-depliable__title hover:bg-blue hover:text-white text-headings">{{liste.titre}}
+					<span class="liste-depliable__icon">
+						<svg class="w-4 h-4">
+							<use xlink:href="{{site.url}}/app/themes/1619/assets/build/icons.svg#chevron-right-regular"></use>
+						</svg>
+					</span>
+				</h3>
+				<div class="hidden p-8 border-b border-bgGray2 liste-depliable__content">
+
+					<div class="liste-depliable__text">
+						{{liste.contenu}}
+					</div>
+					{% if liste.titre_liste_documents %}
+						<h3 class="content__h3">{{liste.titre_liste_documents}}</h3>
+					{% endif %}
+					{% if liste.documents %}
+						<ul class="rounded-md documents-joints__list">
+							<li class="flex py-4 text-lg font-bold text-headings documents-joints__item group font-headings">
+								Documents
+								<br>
+								téléchargeables
+							</li>
+
+							{% for document in liste.documents %}
+								<li class="flex gap-4 hover:opacity-60 cursor-pointer items-center py-3 {{loop.last == false ? 'border-b ' : ''}}  documents-joints__item border-bgGray2 group">
+									<a href="{{get_info_doc(document.document)['url']}}">
+
+										<span class="flex items-center justify-center w-10 h-10 text-white rounded-full bg-blue" target="_blank" href="{{get_info_doc(document.document)['url']}}">
+											<svg class="w-5 h-5">
+												<use xlink:href="{{site.url}}/app/themes/1619/assets/build/icons.svg#arrow-down"></use>
+											</svg>
+										</span>
+
+
+										<a class="font-bold break-words documents-joints__item-title text-headings" target=" _blank" href=" {{get_info_doc(document.document)['url']}} ">
+											{{get_info_doc(document.document)['name']}}
+										</a>
+										<span class="text-xs text-text uppercase text-textGray documents-joints__filesize--{{get_info_doc(document.document)['extension']}}">
+											{{get_info_doc(document.document)['extension']}}
+											-
+											{{get_info_doc(document.document)['size']}}
+										</span>
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+
+					{% endif %}
+
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

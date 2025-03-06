@@ -1,0 +1,16 @@
+{% if post.children('page') %}
+    <div class="grid grid-cols-3 gap-10 post-list post-list-children">
+        {% for child in post.children('page') %}
+            <div class="transition-all shadow-lg cursor-pointer hover:shadow-2xl hover:opacity-90 w-80 " onclick="location.href='{{child.link}}'">
+                <div class="relative bg-center bg-cover lazy w-full h-[370px]" data-bg="{{post.thumbnail.src ? post.thumbnail.src : img_folder~"/img-default.jpg"}}">
+
+                    <span class="max-w-[80%] absolute right-0 z-10 block p-5 pl-4 mb-5 text-xl font-bold uppercase bg-white text-headigns font-headings bottom-10">
+                        {{child.title}}
+                    </span>
+                    <div class="absolute top-0 left-0 w-full h-full overlay opacity-30 bg-headings"></div>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
