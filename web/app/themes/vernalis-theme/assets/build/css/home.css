@@ -1931,6 +1931,9 @@ video {
   .laptop\:h-\[500px\]{
     height: 500px;
   }
+  .laptop\:h-0{
+    height: 0px;
+  }
   .laptop\:w-1\/2{
     width: 50%;
   }
@@ -1973,6 +1976,12 @@ video {
   .laptop\:text-base{
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+  .laptop\:opacity-0{
+    opacity: 0;
+  }
+  .group:hover .laptop\:group-hover\:opacity-100{
+    opacity: 1;
   }
 }
 @media (min-width: 1720px){
