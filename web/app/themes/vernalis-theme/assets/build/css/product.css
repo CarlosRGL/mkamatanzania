@@ -1,0 +1,11 @@
+.single-product div .related {
+  display: none !important;
+}
+.single-product div.quantity {
+  display: none !important;
+}
+.single-product button.single_add_to_cart_button {
+  display: none !important;
+}
+
+/*# sourceMappingURL=product.css.map*/
