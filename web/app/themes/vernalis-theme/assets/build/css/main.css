@@ -2011,6 +2011,9 @@ video {
   .laptop\:gap-16{
     gap: 4rem;
   }
+  .laptop\:p-10{
+    padding: 2.5rem;
+  }
   .laptop\:text-4xl{
     font-size: 2.25rem;
     line-height: 2.5rem;
