@@ -556,6 +556,9 @@ video {
 .right-0{
   right: 0px;
 }
+.right-12{
+  right: 3rem;
+}
 .right-4{
   right: 1rem;
 }
@@ -570,9 +573,6 @@ video {
 }
 .top-full{
   top: 100%;
-}
-.right-12{
-  right: 3rem;
 }
 .z-10{
   z-index: 10;
@@ -729,9 +729,6 @@ video {
 .mt-3{
   margin-top: 0.75rem;
 }
-.mt-32{
-  margin-top: 8rem;
-}
 .mt-5{
   margin-top: 1.25rem;
 }
@@ -740,12 +737,6 @@ video {
 }
 .mt-auto{
   margin-top: auto;
-}
-.mb-14{
-  margin-bottom: 3.5rem;
-}
-.mt-16{
-  margin-top: 4rem;
 }
 .line-clamp-3{
   overflow: hidden;
@@ -817,11 +808,17 @@ video {
 .h-\[100px\]{
   height: 100px;
 }
+.h-\[105px\]{
+  height: 105px;
+}
 .h-\[200px\]{
   height: 200px;
 }
 .h-\[250px\]{
   height: 250px;
+}
+.h-\[300px\]{
+  height: 300px;
 }
 .h-\[350px\]{
   height: 350px;
@@ -835,9 +832,6 @@ video {
 .h-\[400px\]{
   height: 400px;
 }
-.h-\[500px\]{
-  height: 500px;
-}
 .h-\[50px\]{
   height: 50px;
 }
@@ -849,12 +843,6 @@ video {
 }
 .h-full{
   height: 100%;
-}
-.h-\[105px\]{
-  height: 105px;
-}
-.h-\[300px\]{
-  height: 300px;
 }
 .min-h-\[250px\]{
   min-height: 250px;
@@ -928,6 +916,9 @@ video {
 .w-\[90\%\]{
   width: 90%;
 }
+.w-\[95\%\]{
+  width: 95%;
+}
 .w-auto{
   width: auto;
 }
@@ -937,9 +928,6 @@ video {
 }
 .w-full{
   width: 100%;
-}
-.w-\[95\%\]{
-  width: 95%;
 }
 .max-w-2xl{
   max-width: 42rem;
@@ -959,9 +947,6 @@ video {
 .max-w-\[80\%\]{
   max-width: 80%;
 }
-.max-w-\[85d\%\]{
-  max-width: 85d%;
-}
 .max-w-screen-desktop{
   max-width: 1720px;
 }
@@ -970,9 +955,6 @@ video {
 }
 .max-w-xl{
   max-width: 36rem;
-}
-.max-w-\[85\%\]{
-  max-width: 85%;
 }
 .flex-1{
   flex: 1 1 0%;
@@ -1066,6 +1048,9 @@ video {
 .justify-items-center{
   justify-items: center;
 }
+.gap-1{
+  gap: 0.25rem;
+}
 .gap-10{
   gap: 2.5rem;
 }
@@ -1098,9 +1083,6 @@ video {
 }
 .gap-8{
   gap: 2rem;
-}
-.gap-1{
-  gap: 0.25rem;
 }
 .gap-x-4{
   -moz-column-gap: 1rem;
@@ -1987,14 +1969,14 @@ video {
   .laptop\:mt-0{
     margin-top: 0px;
   }
+  .laptop\:mt-32{
+    margin-top: 8rem;
+  }
   .laptop\:flex{
     display: flex;
   }
   .laptop\:inline-flex{
     display: inline-flex;
-  }
-  .laptop\:h-\[400px\]{
-    height: 400px;
   }
   .laptop\:h-\[500px\]{
     height: 500px;
@@ -2007,6 +1989,9 @@ video {
   }
   .laptop\:max-w-\[85\%\]{
     max-width: 85%;
+  }
+  .laptop\:max-w-\[95\%\]{
+    max-width: 95%;
   }
   .laptop\:grid-cols-1{
     grid-template-columns: repeat(1, minmax(0, 1fr));
