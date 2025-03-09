@@ -35,17 +35,14 @@ function init() {
   });
 
   // smooth scroll to all anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      var element = document.querySelector(this.getAttribute("href"));
-      var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: elementPosition - 150,
-        // 100px offset
-        behavior: "smooth"
-      });
-    });
+  jQuery('a[href^="#"]').on("click", function (e) {
+    e.preventDefault();
+    var element = jQuery(jQuery(this).attr("href"));
+    console.log(element);
+    var elementPosition = element.offset().top;
+    jQuery("html, body").animate({
+      scrollTop: elementPosition - 150 // 100px offset
+    }, 800);
   });
 
   // Initialize ScrollReveal

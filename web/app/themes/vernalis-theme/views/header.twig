@@ -5,9 +5,9 @@
       <a id="logo-white" href="{{ site.url }}" class="flex flex-col justify-center items-center"><img src="{{ img_folder }}/logo-white.png" alt="logo" class="w-48" /></a>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-      <a href="{{ site.url }}#quienes-somos" class="leading-6 uppercase hover:bg-[#99772E] hover:text-white transition-all duration-200 px-4 py-2 rounded-full">Quienes somos</a>
-      <a href="{{ site.url }}#destinos" class="leading-6 uppercase hover:bg-[#99772E] hover:text-white transition-all duration-200 px-4 py-2 rounded-full">Destinos</a>
-      <a href="{{ site.url }}#viajes-a-medida" class="leading-6 uppercase hover:bg-[#99772E] hover:text-white transition-all duration-200 px-4 py-2 rounded-full">A medida</a>
+      <a href="{{ fn('is_home') ? '#quienes-somos' : site.url ~ '#quienes-somos' }}" class="leading-6 uppercase hover:bg-[#99772E] hover:text-white transition-all duration-200 px-4 py-2 rounded-full">Quienes somos</a>
+      <a href="{{ fn('is_home') ? '#destinos' : site.url ~ '#destinos' }}" class="leading-6 uppercase hover:bg-[#99772E] hover:text-white transition-all duration-200 px-4 py-2 rounded-full">Destinos</a>
+      <a href="{{ fn('is_home') ? '#viajes-a-medida' : site.url ~ '#viajes-a-medida' }}" class="leading-6 uppercase hover:bg-[#99772E] hover:text-white transition-all duration-200 px-4 py-2 rounded-full">A medida</a>
       <a href="{{ site.url }}/contacto" class="leading-6 uppercase hover:bg-[#99772E] hover:text-white transition-all duration-200 px-4 py-2 rounded-full">Contacto</a>
     </div>
   </nav>

@@ -21,17 +21,19 @@ export default function init() {
   });
 
   // smooth scroll to all anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const element = document.querySelector(this.getAttribute("href"));
-      const elementPosition =
-        element.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: elementPosition - 150, // 100px offset
-        behavior: "smooth",
-      });
-    });
+  jQuery('a[href^="#"]').on("click", function (e) {
+    e.preventDefault();
+    const element = jQuery(jQuery(this).attr("href"));
+    console.log(element);
+
+    const elementPosition = element.offset().top;
+
+    jQuery("html, body").animate(
+      {
+        scrollTop: elementPosition - 150, // 100px offset
+      },
+      800
+    );
   });
 
   // Initialize ScrollReveal
