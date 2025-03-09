@@ -1928,9 +1928,6 @@ video {
   .laptop\:w-1\/2{
     width: 50%;
   }
-  .laptop\:w-\[38\%\]{
-    width: 38%;
-  }
   .laptop\:max-w-\[95\%\]{
     max-width: 95%;
   }
