@@ -16,16 +16,19 @@
         <h3 class="text-xl font-bold mb-6 text-[#99772E]">Enlaces Rápidos</h3>
         <ul class="space-y-3">
           <li>
-            <a href="#quienes-somos" class="text-gray-300 transition-colors hover:text-white">Quiénes Somos</a>
+            <a href="{{ fn('is_home') ? '#quienes-somos' : site.url ~ '#quienes-somos' }}" class="text-gray-300 transition-colors hover:text-white">Quiénes Somos</a>
           </li>
           <li>
-            <a href="#destinos" class="text-gray-300 transition-colors hover:text-white">Destinos</a>
+            <a href="{{ fn('is_home') ? '#destinos' : site.url ~ '#destinos' }}" class="text-gray-300 transition-colors hover:text-white">Destinos</a>
           </li>
           <li>
-            <a href="#viajes-a-medida" class="text-gray-300 transition-colors hover:text-white">Viajes a Medida</a>
+            <a href="{{ fn('is_home') ? '#viajes-a-medida' : site.url ~ '#viajes-a-medida' }}" class="text-gray-300 transition-colors hover:text-white">Viajes a Medida</a>
           </li>
           <li>
-            <a href="#contacto" class="text-gray-300 transition-colors hover:text-white">Contacto</a>
+            <a href="{{ site.url }}/contacto" class="text-gray-300 transition-colors hover:text-white">Contacto</a>
+          </li>
+          <li>
+            <a href="{{ site.url }}/politica-de-privacidad" class="text-gray-300 transition-colors hover:text-white">Política de Privacidad</a>
           </li>
         </ul>
       </div>
