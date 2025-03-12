@@ -4,9 +4,9 @@
   <div class="container relative z-10 px-4 mx-auto">
     <div class="flex flex-col gap-8 justify-between items-center laptop:flex-row laptop:gap-16">
       <!-- Left side with images -->
-      <div class="relative w-full laptop:w-1/2">
+      <div class="relative w-full laptop:w-1/2 reveal-image">
         <div class="overflow-hidden relative z-10 rounded-lg shadow-xl">
-          <img src="{{ img_folder }}/intro2.jpeg" alt="Safari en Tanzania" class="w-full h-auto" />
+          <img src="{{ img_folder }}/intro-2.jpeg" alt="Safari en Tanzania" class="w-full h-auto" />
         </div>
         {# <div class="overflow-hidden absolute right-0 bottom-0 z-20 w-3/4 rounded-lg shadow-xl transform translate-x-1/4 translate-y-1/4">
           <img src="{{ img_folder }}/intro.jpg" alt="Paisajes de Tanzania" class="w-full h-auto" />
@@ -14,10 +14,10 @@
       </div>
 
       <!-- Right side with content -->
-      <div class="mt-20 w-full laptop:w-1/2 laptop:mt-0">
+      <div class="mt-20 w-full laptop:w-1/2 laptop:mt-0 reveal-content">
         <div class="mb-4 font-medium tracking-wider text-[#99772E] uppercase">Quienes somos</div>
 
-        <h2 class="mb-8 text-4xl font-bold text-[#022F1B] laptop:text-5xl">Mkama Viajes Tanzania</h2>
+        <h2 class="mb-8 text-4xl font-bold text-[#022F1B] laptop:text-5xl reveal-header">Mkama Viajes Tanzania</h2>
 
         <div class="pl-4 mb-6 border-l-4 border-[#99772E]">
           <p class="text-lg font-medium text-[#022F1B]">Somos una tour operador local de Tanzania con sede en Arusha, Tanzania y España</p>
@@ -65,7 +65,7 @@
   </div>
 
   <div class="grid grid-cols-1 gap-12 mt-10 laptop:mt-32 mb-8 laptop:grid-cols-2 laptop:max-w-[95%] mx-auto">
-    <div class="p-10 relative bg-[#99772E] rounded-lg shadow-md">
+    <div class="p-10 relative bg-[#99772E] rounded-lg shadow-md reveal-card">
       <div class="relative z-20">
         <div class="flex items-center mb-8">
           <div class="flex flex-shrink-0 justify-center items-center mr-3 w-10 h-10 bg-[#022F1B] rounded-full">
@@ -78,7 +78,7 @@
       <div class="absolute inset-0 bg-center bg-cover opacity-10 bg-pattern lazy" data-bg="{{ img_folder }}/bg_pattern.png"></div>
     </div>
 
-    <div class="p-10 relative bg-[#022F1B] rounded-lg shadow-md">
+    <div class="p-10 relative bg-[#022F1B] rounded-lg shadow-md reveal-card">
       <div class="relative z-20">
         <div class="flex items-center mb-8">
           <div class="flex flex-shrink-0 justify-center items-center mr-3 w-10 h-10 bg-[#99772E] rounded-full">
@@ -90,5 +90,110 @@
       </div>
       <div class="absolute inset-0 bg-center bg-cover opacity-10 bg-pattern lazy" data-bg="{{ img_folder }}/bg_pattern.png"></div>
     </div>
+  </div>
+
+  <!-- Guide Section -->
+  <div class="mt-20 mb-8 laptop:mt-32 reveal-section">
+    <div class="container relative z-10 px-4 mx-auto">
+      <div class="mb-16 text-center">
+        <div class="mb-4 font-medium tracking-wider text-[#99772E] uppercase">Nuestro Guía</div>
+        <h2 class="mb-8 text-4xl font-bold text-[#022F1B] laptop:text-5xl reveal-header">Conoce a Nuestro Experto</h2>
+        <p class="mx-auto max-w-3xl text-gray-700">Nuestro guía principal combina experiencia local, conocimiento profundo y pasión por Tanzania para ofrecerte una experiencia auténtica e inolvidable.</p>
+      </div>
+
+      <div class="flex flex-col gap-12 justify-center items-center laptop:flex-row laptop:gap-16">
+        <!-- Left side with image -->
+        <div class="relative w-full laptop:w-1/3 reveal-image">
+          <div class="overflow-hidden relative z-10 rounded-lg shadow-xl">
+            <img src="{{ img_folder }}/gerald.jpeg" alt="Nuestro guía en Tanzania" class="w-full h-auto" />
+          </div>
+        </div>
+
+        <!-- Right side with content -->
+        <div class="w-full laptop:w-1/2 reveal-content">
+          <h3 class="mb-6 text-3xl font-bold text-[#022F1B]">Gerald Mkama</h3>
+          <div class="pl-4 mb-6 border-l-4 border-[#99772E]">
+            <p class="text-lg font-medium text-[#022F1B]">Guía profesional con más de 21 años de experiencia</p>
+          </div>
+
+          <p class="mb-6 text-gray-700">Gerald Mkama posee un Certificado en Guía y Operaciones Turísticas y aporta consigo una impresionante experiencia de 21 años en el sector turístico. Ha sobresalido en diversos roles, incluyendo la guía de tours y las operaciones turísticas en general.</p>
+
+          <div class="grid grid-cols-1 gap-4 mb-8 laptop:grid-cols-2">
+            <div class="flex gap-4 items-center">
+              <i class="fa-duotone fa-solid text-xl fa-circle-check text-[#99772E]"></i>
+              <span class="font-medium text-gray-700">Bilingüe (Español/Inglés)</span>
+            </div>
+            <div class="flex gap-4 items-center">
+              <i class="fa-duotone fa-solid text-xl fa-circle-check text-[#99772E]"></i>
+              <span class="font-medium text-gray-700">Logística Experta</span>
+            </div>
+            <div class="flex gap-4 items-center">
+              <i class="fa-duotone fa-solid text-xl fa-circle-check text-[#99772E]"></i>
+              <span class="font-medium text-gray-700">Gestión de Emergencias</span>
+            </div>
+            <div class="flex gap-4 items-center">
+              <i class="fa-duotone fa-solid text-xl fa-circle-check text-[#99772E]"></i>
+              <span class="font-medium text-gray-700">Atención Personalizada</span>
+            </div>
+          </div>
+
+          <p class="mb-6 text-gray-700">Su amplia experiencia abarca la preparación meticulosa de toda la logística, la cálida bienvenida a los huéspedes, la provisión de detallados informes sobre los itinerarios de los tours, la guía de viajeros a través de sus destinos elegidos y la resolución eficiente de cualquier problema o emergencia que pueda surgir en el lugar.</p>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="p-10 relative bg-[#022F1B] rounded-lg shadow-md mt-16 reveal-card">
+        <div class="relative z-20">
+          <div class="flex flex-col items-center text-center">
+            <i class="text-4xl text-[#99772E] fas fa-quote-left mb-6"></i>
+            <p class="mb-8 max-w-3xl text-xl italic text-white">Fantástica experiencia con Mkama Viajes Tanzania. Fui con mi familia y todo salió a la perfecccion. Gerard es un guía excepcional y muy profesional así como todo su equipo. Es una agencia totalmente recomendable.</p>
+            <div class="flex items-center">
+              <span class="font-bold text-white">Pablo Zapico Fernandez</span>
+            </div>
+          </div>
+        </div>
+        <div class="absolute inset-0 bg-center bg-cover opacity-10 bg-pattern lazy" data-bg="{{ img_folder }}/bg_pattern.png"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-4 justify-center items-center mt-12 laptop:flex-row laptop:gap-8">
+    <a href="https://www.tripadvisor.com/Attraction_Review-g297913-d16619255-Reviews-Mkama_Tours_To_Tanzania_Limited-Arusha_Arusha_Region.html" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-[#00aa6c] text-white rounded-lg hover:bg-[#00955e] transition-all duration-200">
+      <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.2 320.2" width="30" height="30">
+        <style>
+          .st0 {
+            fill: #fff;
+          }
+        </style>
+        <path class="st0" d="M128.2 127.9C92.7 127.9 64 156.6 64 192c0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1.1-35.4-28.6-64.1-64-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S174 166.7 174 192s-20.5 45.9-45.8 45.9z" />
+        <circle class="st0" cx="128.4" cy="191.9" r="31.9" />
+        <path class="st0" d="M384.2 127.9c-35.4 0-64.1 28.7-64.1 64.1 0 35.4 28.7 64.1 64.1 64.1 35.4 0 64.1-28.7 64.1-64.1 0-35.4-28.7-64.1-64.1-64.1zm0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S430 166.7 430 192s-20.5 45.9-45.8 45.9z" />
+        <circle class="st0" cx="384.4" cy="191.9" r="31.9" />
+        <path class="st0" d="M474.4 101.2l37.7-37.4h-76.4C392.9 29 321.8 0 255.9 0c-66 0-136.5 29-179.3 63.8H0l37.7 37.4C14.4 124.4 0 156.5 0 192c0 70.8 57.4 128.2 128.2 128.2 32.5 0 62.2-12.1 84.8-32.1l43.4 31.9 42.9-31.2-.5-1.2c22.7 20.2 52.5 32.5 85.3 32.5 70.8 0 128.2-57.4 128.2-128.2-.1-35.4-14.6-67.5-37.9-90.7zM368 64.8c-60.7 7.6-108.3 57.6-111.9 119.5-3.7-62-51.4-112.1-112.3-119.5 30.6-22 69.6-32.8 112.1-32.8S337.4 42.8 368 64.8zM128.2 288.2C75 288.2 32 245.1 32 192s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2zm256 0c-53.1 0-96.2-43.1-96.2-96.2s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2z" />
+      </svg>
+      <div class="flex flex-col">
+        <div class="flex gap-1 text-lg">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <span class="text-sm">Ver reseñas en TripAdvisor</span>
+      </div>
+    </a>
+    <a href="https://www.google.com/maps/place/Mkama+Viajes+Tanzania,+Swahili+St,+Arusha+13143,+Tanzania/data=!4m2!3m1!1s0x18371dd38432bb9d:0x796970de6328537c" target="_blank" class="flex items-center gap-4 px-6 py-3 bg-[#DB4437] text-white rounded-lg hover:bg-[#c13b30] transition-all duration-200">
+      <i class="text-2xl fab fa-google"></i>
+      <div class="flex flex-col">
+        <div class="flex gap-1 text-lg">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <span class="text-sm">Ver reseñas en Google Maps</span>
+      </div>
+    </a>
   </div>
 </div>
