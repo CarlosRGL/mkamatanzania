@@ -35,54 +35,34 @@ add_action(
 			'ef7f72cf64',
 			true
 		);
-		if ( is_singular( 'salles' ) ) {
-			wp_enqueue_script( 'calendar', VS_THEME_URL . '/assets/src/js/calendar/jsCalendar.js', '', '1.4.4', false );
-			wp_enqueue_script( 'calendar_fr', VS_THEME_URL . '/assets/src/js/calendar/jsCalendar.lang.fr.js', '', '1.4.4', false );
-			wp_enqueue_script( 'calendar_custom', VS_THEME_URL . '/assets/build/js/calendar.js', array( 'calendar' ), '1.4.4', true );
-		}
 		wp_enqueue_script(
-			'WP_seizedixneuf_js_manifest',
+			'mkamatanzania_js_manifest',
 			VS_THEME_URL . '/assets/build/js/manifest.js',
 			array( 'jquery' ),
 			filesize( VS_DIR . '/assets/build/js/manifest.js', ),
 			true
 		);
 		wp_enqueue_script(
-			'WP_seizedixneuf_js_vendor',
+			'mkamatanzania_js_vendor',
 			VS_THEME_URL . '/assets/build/js/vendor.js',
-			array( 'jquery', 'WP_seizedixneuf_js_manifest' ),
+			array( 'jquery', 'mkamatanzania_js_manifest' ),
 			filesize( VS_DIR . '/assets/build/js/vendor.js', ),
 			true
 		);
 		wp_enqueue_script(
-			'WP_seizedixneuf_js',
+			'mkamatanzania_js',
 			VS_THEME_URL . '/assets/build/js/' . $page_type . '.js',
-			array( 'jquery', 'WP_seizedixneuf_js_manifest', 'WP_seizedixneuf_js_vendor' ),
+			array( 'jquery', 'mkamatanzania_js_manifest', 'mkamatanzania_js_vendor' ),
 			filesize( VS_DIR . '/assets/build/js/' . $page_type . '.js', ),
 			true
 		);
 
 		wp_enqueue_style(
-			'WP_seizedixneuf_css',
+			'mkamatanzania_css',
 			VS_THEME_URL . '/assets/build/css/' . $page_type . '.css',
 			array(),
 			filesize( VS_DIR . '/assets/build/css/' . $page_type . '.css', ),
 			''
-		);
-
-		wp_enqueue_style(
-			'WP_seizedixneuf_css_product',
-			VS_THEME_URL . '/assets/build/css/product.css',
-			array(),
-			filesize( VS_DIR . '/assets/build/css/product.css', ),
-			''
-		);
-		wp_enqueue_script(
-			'WP_seizedixneuf_js_product',
-			VS_THEME_URL . '/assets/build/js/product.js',
-			array( 'jquery', 'WP_seizedixneuf_js_manifest', 'WP_seizedixneuf_js_vendor' ),
-			filesize( VS_DIR . '/assets/build/js/product.js', ),
-			true
 		);
 	}
 );
