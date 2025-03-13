@@ -1,28 +1,50 @@
-<div data-pushbar-id="pushbar" class="pushbar from_right">
-    <i class="fas fa-times pushbar__icon--close" data-pushbar-close></i>
-    <nav class="responsive-menu" role="navigation">
-      {% if menu %}
-        <ul class="responsive-menu__list">
-          {% for item in menu.items %}
-            <li class="{{ item.classes | join(' ') }} responsive-menu__item">
-              <a class="responsive-menu__link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-              {% if item.children %}
-                  <ul class="responsive-menu__sousmenu">
-                      {% for child in item.children %}
-                          <li class="responsive-menu__sousitem">
-                              <a href="{{ child.link }}">{{ child.title }}</a>
-                          </li>
-                      {% endfor %}
-                  </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </nav>
-</div>
+<span class="hidden bg-opacity-40"></span>
 
+<div id="js-menu-overlay" class="overflow-hidden z-[9999999999] fixed top-0 left-0 invisible w-full h-screen bg-[#99772E] opacity-0 transition-all"></div>
+<div id="js-menu" class="fixed flex flex-col overflow-y-auto top-0 z-[99999999999] w-[350px] h-full pt-8 transition-all bg-white -left-full">
+  <a id="logo" href="{{ site.url }}" class="flex flex-col justify-center items-center"><img src="{{ img_folder }}/logo.png" alt="logo" class="w-48" /></a>
+  <nav class="overflow-y-auto mt-10">
+    <ul class="overflow-y-auto">
+      <li class="flex relative flex-wrap justify-between items-center px-5 border-b border-gray-200">
+        <a href="{{ fn('is_home') ? '#quienes-somos' : site.url ~ '#quienes-somos' }}" class="block py-4 text-lg font-medium hover:text-[#99772E] transition-all duration-200">Quienes somos</a>
+      </li>
+      <li class="flex relative flex-wrap justify-between items-center px-5 border-b border-gray-200">
+        <a href="{{ fn('is_home') ? '#destinos' : site.url ~ '#destinos' }}" class="block py-4 text-lg font-medium hover:text-[#99772E] transition-all duration-200">Destinos</a>
+      </li>
+      <li class="flex relative flex-wrap justify-between items-center px-5 border-b border-gray-200">
+        <a href="{{ fn('is_home') ? '#viajes-a-medida' : site.url ~ '#viajes-a-medida' }}" class="block py-4 text-lg font-medium hover:text-[#99772E] transition-all duration-200">A medida</a>
+      </li>
+      <li class="flex relative flex-wrap justify-between items-center px-5 border-b border-gray-200">
+        <a href="{{ site.url }}/contacto" class="block py-4 text-lg font-medium hover:text-[#99772E] transition-all duration-200">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Contact Links -->
+  <div class="px-5 mt-auto mb-4 text-sm">
+    <ul class="space-y-2">
+      <li class="flex gap-3 items-center">
+        <div class="flex-shrink-0 w-8 h-8 bg-[#99772E] rounded-full flex items-center justify-center">
+          <i class="text-white fab fa-whatsapp"></i>
+        </div>
+        <div class="flex flex-col">
+          <a href="https://wa.me/34648865619" target="_blank" class="text-gray-700 hover:text-[#99772E] transition-all duration-200">España: +34 648865619</a>
+          <a href="https://wa.me/255757173431" target="_blank" class="text-gray-700 hover:text-[#99772E] transition-all duration-200">Tanzania: +255 757173431</a>
+        </div>
+      </li>
+      <li class="flex gap-3 items-center">
+        <div class="flex-shrink-0 w-8 h-8 bg-[#99772E] rounded-full flex items-center justify-center">
+          <i class="text-white far fa-envelope"></i>
+        </div>
+        <a href="mailto:info@mkamatanzania.com" class="text-gray-700 hover:text-[#99772E] transition-all duration-200">info@mkamatanzania.com</a>
+      </li>
+      <li class="flex gap-3 items-center">
+        <div class="flex-shrink-0 w-8 h-8 bg-[#99772E] rounded-full flex items-center justify-center">
+          <i class="text-white fab fa-instagram"></i>
+        </div>
+        <a href="https://instagram.com/mkamatanzania" target="_blank" class="text-gray-700 hover:text-[#99772E] transition-all duration-200">@mkamatanzania</a>
+      </li>
+    </ul>
+  </div>
 
-<div class="pushbar_main_content pushbar__icon">
-    <i class="fas fa-bars pushbar__icon--open" data-pushbar-target="pushbar"></i>
+  <span id="js-menu-close" class="absolute top-5 right-5 text-4xl text-orange-cua"><i class="fa-solid fa-circle-xmark"></i></span>
 </div>

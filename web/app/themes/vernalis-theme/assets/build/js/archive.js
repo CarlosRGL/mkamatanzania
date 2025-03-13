@@ -40,6 +40,18 @@ function init() {
       instance.setContent(instance.reference.dataset.tippy);
     }
   });
+  jQuery("#js-menu-open, #js-menu-close, #js-menu-overlay").on("click", function () {
+    jQuery("#js-menu-overlay").toggleClass("invisible");
+    jQuery("#js-menu-overlay").toggleClass("bg-opacity-70");
+    jQuery("#js-menu-overlay").toggleClass("opacity-0");
+    jQuery("#js-menu").toggleClass("-left-full");
+    jQuery("#js-menu").toggleClass("left-0");
+  });
+  jQuery(".js-submenu").on("click", function () {
+    console.log(jQuery(this));
+    jQuery(this).parent().siblings("ul").slideToggle();
+    jQuery(this).toggleClass("rotate-90");
+  });
 
   // when scroll from top add class .active to #header
   window.addEventListener("scroll", function () {
