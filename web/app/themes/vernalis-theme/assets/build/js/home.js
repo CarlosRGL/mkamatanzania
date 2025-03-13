@@ -146,7 +146,7 @@ var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".header-
   slidesPerView: 1,
   // effect: "fade",
   autoplay: {
-    delay: 10000,
+    delay: 7000,
     disableOnInteraction: false
   },
   loop: true
