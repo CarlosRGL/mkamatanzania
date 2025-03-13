@@ -32,8 +32,12 @@
   border-right-color: #f39200;
 }
 
+.test {
+  @apply bg-red-500;
+}
+
 .lazy {
-  // placeholder image effect gray
+  // placeholder image effect grays
   background-color: #f3f3f3;
 }
 
