@@ -15,7 +15,7 @@ var swiper = new Swiper(".header-slider", {
   slidesPerView: 1,
   // effect: "fade",
   autoplay: {
-    delay: 5000,
+    delay: 10000,
     disableOnInteraction: false,
   },
   loop: true,
