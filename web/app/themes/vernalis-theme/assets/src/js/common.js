@@ -53,58 +53,61 @@ export default function init() {
     );
   });
 
-  // Initialize ScrollReveal
-  const sr = ScrollReveal({
-    origin: "bottom",
-    distance: "60px",
-    duration: 1000,
-    delay: 200,
-    easing: "cubic-bezier(0.5, 0, 0, 1)",
-    reset: false,
-  });
+  // Only initialize ScrollReveal for non-mobile devices (screen width > 768px)
+  if (window.innerWidth > 768) {
+    // Initialize ScrollReveal
+    const sr = ScrollReveal({
+      origin: "bottom",
+      distance: "60px",
+      duration: 1000,
+      delay: 200,
+      easing: "cubic-bezier(0.5, 0, 0, 1)",
+      reset: false,
+    });
 
-  // Apply to sections
-  sr.reveal(".reveal-section", {
-    interval: 200,
-  });
+    // Apply to sections
+    sr.reveal(".reveal-section", {
+      interval: 200,
+    });
 
-  // Apply to section headers
-  sr.reveal(".reveal-header", {
-    origin: "top",
-    distance: "40px",
-    delay: 100,
-  });
+    // Apply to section headers
+    sr.reveal(".reveal-header", {
+      origin: "top",
+      distance: "40px",
+      delay: 100,
+    });
 
-  // Apply to images
-  sr.reveal(".reveal-image", {
-    origin: "left",
-    distance: "80px",
-    delay: 300,
-  });
+    // Apply to images
+    sr.reveal(".reveal-image", {
+      origin: "left",
+      distance: "80px",
+      delay: 300,
+    });
 
-  // Apply to content blocks
-  sr.reveal(".reveal-content", {
-    origin: "right",
-    distance: "80px",
-    delay: 300,
-  });
+    // Apply to content blocks
+    sr.reveal(".reveal-content", {
+      origin: "right",
+      distance: "80px",
+      delay: 300,
+    });
 
-  // Apply to cards with staggered delay
-  sr.reveal(".reveal-card", {
-    interval: 150,
-  });
+    // Apply to cards with staggered delay
+    sr.reveal(".reveal-card", {
+      interval: 150,
+    });
 
-  // Apply to contact form
-  sr.reveal(".reveal-form", {
-    origin: "bottom",
-    distance: "50px",
-    delay: 200,
-  });
+    // Apply to contact form
+    sr.reveal(".reveal-form", {
+      origin: "bottom",
+      distance: "50px",
+      delay: 200,
+    });
 
-  // Apply to contact info
-  sr.reveal(".reveal-contact-info", {
-    origin: "right",
-    distance: "50px",
-    delay: 300,
-  });
+    // Apply to contact info
+    sr.reveal(".reveal-contact-info", {
+      origin: "right",
+      distance: "50px",
+      delay: 300,
+    });
+  }
 }

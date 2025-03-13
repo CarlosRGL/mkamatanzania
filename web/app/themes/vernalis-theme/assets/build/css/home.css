@@ -1997,6 +1997,9 @@ video {
   .laptop\:mt-32{
     margin-top: 8rem;
   }
+  .laptop\:mt-20{
+    margin-top: 5rem;
+  }
   .laptop\:block{
     display: block;
   }
