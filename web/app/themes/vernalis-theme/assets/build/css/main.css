@@ -1778,7 +1778,6 @@ video {
 .content__h2,
 .content .wsp-container h2, .content__h3 {
   font-size: 28px;
-  font-family: Montserrat;
   font-weight: 700;
   color: #001b3b;
   text-transform: uppercase;
@@ -1909,7 +1908,6 @@ video {
   margin-bottom: 40px;
 }
 .content .wp-block-image figcaption {
-  font-family: Poppins;
   color: #aaaaaa;
   font-style: italic;
   font-size: 14px;
