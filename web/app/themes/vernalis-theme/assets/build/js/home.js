@@ -125,18 +125,33 @@ function init() {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vanilla_lazyload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vanilla-lazyload */ "./node_modules/.pnpm/vanilla-lazyload@19.1.3/node_modules/vanilla-lazyload/dist/lazyload.min.js");
-/* harmony import */ var vanilla_lazyload__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vanilla_lazyload__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vanilla_lazyload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vanilla-lazyload */ "./node_modules/.pnpm/vanilla-lazyload@19.1.3/node_modules/vanilla-lazyload/dist/lazyload.min.js");
+/* harmony import */ var vanilla_lazyload__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vanilla_lazyload__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common */ "./src/js/common.js");
+/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/.pnpm/swiper@11.2.4/node_modules/swiper/swiper-bundle.mjs");
+/* harmony import */ var swiper_css_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/bundle */ "./node_modules/.pnpm/swiper@11.2.4/node_modules/swiper/swiper-bundle.css");
+
+
+// import Swiper JS
 
 
 (0,_common__WEBPACK_IMPORTED_MODULE_0__["default"])();
 // Init Lazy load instance
-var lazyLoad = new (vanilla_lazyload__WEBPACK_IMPORTED_MODULE_1___default())();
+var lazyLoad = new (vanilla_lazyload__WEBPACK_IMPORTED_MODULE_3___default())();
 function sliderLazy() {
   lazyLoad.update();
 }
-console.log("home_js");
+var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".header-slider", {
+  spaceBetween: 30,
+  slidesPerView: 1,
+  // effect: "fade",
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  loop: true
+});
+console.log(swiper);
 
 /***/ }),
 

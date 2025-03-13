@@ -40,10 +40,25 @@
     <video autoplay loop muted class="object-cover absolute top-0 left-0 z-10 w-full" style="height: calc(100vh / 1.3);">
       <source src="{{ homepage.video }}" type="video/mp4" />Your browser does not support the video tag.
     </video>
-    <div class="absolute top-1/2 left-1/2 z-30 w-[95%] flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2">
-      <h2 class="mb-8 text-xl font-light text-center text-white laptop:text-4xl reveal-header">Embárcate en una aventura inolvidable con <span class="block text-2xl text-center laptop:text-6xl mt-4e reveal-form"><span class="font-black uppercase">Mkama</span> Viajes Tanzania</span></h2>
-      <h2 class="mb-8 text-base font-light text-white reveal-header">Sin intermediarios</h2>
-      <a href="{{ site.url }}/#destinos" class="inline-flex reveal-image w-fit py-2 px-4 text-center bg-[#99772E] z-30 text-white shadow-md rounded-lg hover:bg-white hover:text-[#99772E] transition-all duration-200 hover:-translate-y-2">Descubre nuestras experiencias</a>
+
+    <div class="absolute overflow-hidden top-1/2 left-1/2 z-30 w-[95%] flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2">
+      <div class="w-full swiper-container header-slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="flex flex-col justify-center items-center">
+              <h2 class="mb-8 text-xl font-light text-center text-white laptop:text-4xl">Embárcate en una aventura inolvidable con <span class="block mt-4 text-2xl text-center laptop:text-6xl"><span class="font-black uppercase">Mkama</span> Viajes Tanzania</span></h2>
+              <h2 class="mb-8 text-xl font-light text-white laptop:text-4xl">Sin intermediarios</h2>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="flex flex-col justify-center items-center">
+              <h2 class="mb-8 font-light text-center text-white laptop:text-4xl"><span class="text-2xl font-bold uppercase">Nuestro propósito: <br /></span> creamos experiencias que te acompañarán siempre, <br /> donde cada viajero vive una aventura única, <br /> con excelencia en cada detalle</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="{{ site.url }}/#destinos" class="inline-flex w-fit py-2 px-4 text-center bg-[#99772E] z-30 text-white shadow-md rounded-lg hover:bg-white hover:text-[#99772E] transition-all duration-200 hover:-translate-y-2">Descubre nuestras experiencias</a>
     </div>
   {% else %}
     <img src="{{ post.thumbnail.src }}" alt="video" class="object-cover absolute top-0 left-0 z-10 w-full" style="height: calc(100vh / 2);" />
