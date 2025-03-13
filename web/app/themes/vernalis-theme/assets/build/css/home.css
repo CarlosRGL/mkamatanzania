@@ -1935,6 +1935,9 @@ video {
   .laptop\:mt-32{
     margin-top: 8rem;
   }
+  .laptop\:block{
+    display: block;
+  }
   .laptop\:flex{
     display: flex;
   }
